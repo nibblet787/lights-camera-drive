@@ -8,7 +8,8 @@ const CarsSchema = new mongoose.Schema({
     color:String,
     tags:[String],
     image:String,
-    notes:String
+    notes:String,
+    availability:Boolean
 
   });
 
