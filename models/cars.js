@@ -7,10 +7,10 @@ const CarsSchema = new mongoose.Schema({
     year:{type: Number, required:true}
     color:String,
     tags:[String],
-    image:{type: String, required:true} 
+    image:{type: String, required:true}
 
     notes:String,
-    availability:Boolean
+    availability:Boolean,
 
   });
 
