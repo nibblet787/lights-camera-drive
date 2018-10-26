@@ -5,9 +5,10 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
+require('dotenv').config()
 const db = mongoose.connection;
 const PORT = process.env.PORT || 3000;
-
+const session = require('express-session')
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `movieCars`;
 
 // Connect to Mongo
