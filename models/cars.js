@@ -2,12 +2,13 @@ const mongoose = require('mongoose');
 
 
 const CarsSchema = new mongoose.Schema({
-    make:{String, required:true}
-    model:{String, required:true}
-    year:{Number, required:true}
+    make:{type: String, required:true}
+    model:{type: String, required:true}
+    year:{type: Number, required:true}
     color:String,
     tags:[String],
-    image:{String, required:true} 
+    image:{type: String, required:true} 
+
     notes:String,
     availability:Boolean
 
