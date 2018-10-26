@@ -35,7 +35,7 @@ app.controller('MovieCarController', ['$http', function($http){
     this.getCars = function(){
         $http({
             method:'GET',
-            url:'/'
+            url:'/cars'
         }).then(function(response){
             controller.loggedInUsername = response.data.username;
         })
