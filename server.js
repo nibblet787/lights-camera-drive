@@ -5,6 +5,21 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
+require('dotenv').config()
+const db = mongoose.connection;
+const PORT = process.env.PORT || 3000;
+const session = require('express-session')
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ `movieCars`;
+
+// Connect to Mongo
+mongoose.connect(MONGODB_URI ,  { useNewUrlParser: true});
+
+// Error / success
+db.on('error', (err) => console.log(err.message + ' is Mongod not running?'));
+db.on('connected', () => console.log('mongo connected: ', MONGODB_URI));
+db.on('disconnected', () => console.log('mongo disconnected'));
+
+
 
 
 app.use(express.json());
@@ -12,22 +27,18 @@ app.use(express.static('public'));
 
 
 const CarsController = require('./controllers/cars.js')
-app.use('/cars', CarsController)
+app.use('/', CarsController)
 
 const userController = require('./controllers/users.js')
-app.use('/cars', userController)
+app.use('/', userController)
 
 const sessionsController = require('./controllers/sessions.js')
-app.use('/cars', sessionsController)
+app.use('/', sessionsController)
 
 
-
-
-mongoose.connect('mongodb://localhost:27017/movieCars', { useNewUrlParser: true});
-mongoose.connection.once('open', ()=>{
-    console.log('connected to mongoose...');
-});
-
+app.get('/', (req, res) => {
+  res.send("Hello World")
+})
 
 
 
