@@ -26,13 +26,13 @@ app.use(express.static('public'));
 
 
 const CarsController = require('./controllers/cars.js')
-app.use('/cars', CarsController)
+app.use('/', CarsController)
 
 const userController = require('./controllers/users.js')
-app.use('/cars', userController)
+app.use('/', userController)
 
 const sessionsController = require('./controllers/sessions.js')
-app.use('/cars', sessionsController)
+app.use('/', sessionsController)
 
 
 app.get('/', (req, res) => {
