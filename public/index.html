@@ -11,6 +11,10 @@
       {{2+2}}
     <h1> Lights! Camera! DRIVE!!</h1>
       <h2>Find the perfect vehicle(s) for your film production with just a click!</h2>
+
+    <div ng-repeat="car in ctrl.cars">
+      <li>{{ car.make }}</li>
+    </div>
       <nav>
 
       </nav>

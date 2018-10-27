@@ -19,11 +19,14 @@ app.controller('MovieCarController', ['$http', function ($http) {
     this.getCars = function(){
         $http({
             method:'GET',
-            url:'/app'
+            url:'/cars'
         }).then(function(response){
             controller.loggedInUsername = response.data.username;
-        })
-    }
+            this.cars = response.data // Added by Rick
+          }, error=>{
+              console.log(error);
+          })
+      };
 
 
 
@@ -40,5 +43,25 @@ app.controller('MovieCarController', ['$http', function ($http) {
       })
   }
 
+  this.addCar = function(){ // Function added by Rick
+          $http({
+              method: 'POST',
+              url: '/cars',
+              data: {
+                  make: this.newMake,
+                  model: this.newModel,
+                  year: this.newYear,
+                  color: this.newColor,
+                  tags: this.newTags,
+                  image: this.newImage,
+                  notes: this.newNotes,
+                  availability: this.newAvailability
+              }
+          }).then(response=>{
+              this.getCars();
+          }, error=>{
+              console.log(error);
+          })
+      };
 
   }])

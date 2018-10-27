@@ -63,9 +63,12 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 //            ROUTES
 // =======================================
 
-app.get('/', (req, res) => {
-  res.send("Hello World")
-})
+
+// ======= Commented out by Rick =========
+
+// app.get('/', (req, res) => {
+//   res.send("Hello World")
+// })
 
 app.listen(PORT, ()=>{
     console.log('Lights camera Drive ...');
