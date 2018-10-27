@@ -15,6 +15,7 @@ router.delete('/', (req, res)=>{
     })
 });
 
+//*****should this be posting to '/users' -- on auth app karolin taught use its to '/' but there was only one collection in our db that day(users) we have users and cars.
 router.post('/', (req, res)=>{
     User.findOne({username:req.body.username}, (err, foundUser)=>{
         if(bcrypt.compareSync(req.body.password, foundUser.password)){

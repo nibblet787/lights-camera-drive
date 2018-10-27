@@ -1,6 +1,7 @@
 const app = angular.module('MovieCars', [])
 
 app.controller('MovieCarController', ['$http', function ($http) {
+  this.cars = {}
 
     this.logIn = function(){
         $http({
@@ -11,7 +12,7 @@ app.controller('MovieCarController', ['$http', function ($http) {
                 password:this.password
             }
         }).then(function(response){
-            console.log(response);
+            console.log('logged in');
         })
     }
 

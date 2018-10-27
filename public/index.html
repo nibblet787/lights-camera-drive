@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <title>Lights, Camera, Drive!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
   </head>
-  <body>
-    <div ng-controller="MovieCarController as ctrl">
+  <!--switched the ng controller to the body tag instead of the div-->
+  <body ng-controller="MovieCarController as ctrl">
+    <div >
       {{2+2}}
     <h1> Lights! Camera! DRIVE!!</h1>
       <h2>Find the perfect vehicle(s) for your film production with just a click!</h2>
@@ -18,7 +19,18 @@
       <nav>
 
       </nav>
-
+      <h2>Create User</h2>
+      <form ng-submit="ctrl.createUser()">
+                  <input type="text" ng-model="ctrl.username" />
+                  <input type="password" ng-model="ctrl.password" />
+                  <input type="submit" value="Create User" />
+              </form>
+              <h2>Log In</h2>
+              <form ng-submit="ctrl.logIn()">
+                  <input type="text" ng-model="ctrl.username" />
+                  <input type="password" ng-model="ctrl.password" />
+                  <input type="submit" value="Log In" />
+              </form>
   </div>
   </body>
 </html>

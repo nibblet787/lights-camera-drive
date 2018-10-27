@@ -64,6 +64,19 @@ db.on('disconnected', () => console.log('mongo disconnected'));
 // =======================================
 
 
+app.get('/', (req, res)=>{
+    if(req.session.currentUser){
+        res.json(req.session.currentUser);
+    } else {
+        res.status(401).json({
+            status:401,
+            message:'not logged in'
+        });
+    }
+})
+
+
+
 // ======= Commented out by Rick =========
 
 // app.get('/', (req, res) => {
