@@ -1,6 +1,9 @@
 {
   "name": "lights-camera-drive",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.12.0"
+  },
   "description": "Rent a car for film production",
   "main": "server.js",
   "scripts": {
