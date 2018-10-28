@@ -8,6 +8,8 @@ app.controller('MovieCarController', ['$http', function($http){
   this.tags= "";
   this.image= "";
   this.note= "";
+  this.username = '';
+  this.password ='';
   this.availability= false;
   const controller = this;
 
