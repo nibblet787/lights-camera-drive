@@ -10,19 +10,21 @@ app.controller('MovieCarController', ['$http', function($http){
   this.note= "";
   this.availability= false;
   const controller = this;
-  this.reveal = false;
-  this.toggleReveal =()=>{
-      this.reveal =  !this.reveal;
-   }
+
+
+
   /*********    Show route      ********/
   this.getCars = function(){
     $http({
       method:'GET',
-      url: '/cars',
+      url: '/cars'
     }).then(function(response){
-      controller.cars = response.data;
-    });
-  };
+      console.log(response.data);
+      controller.cars = response.data
+    }, error=>{
+            console.log(error);
+        })
+    };
 
 
   /*********    Create route      ********/
@@ -41,8 +43,7 @@ app.controller('MovieCarController', ['$http', function($http){
         availability: this.availability,
       }
     }).then(function(response){
-        controller.getCars();
-        controller.make= "";
+        controller.make= " ";
         controller.model= "";
         controller.year= "";
         controller.color= "";
@@ -50,6 +51,8 @@ app.controller('MovieCarController', ['$http', function($http){
         controller.image= "";
         controller.note= "";
         controller.availability= false;
+        controller.cars.unshift(response.data)
+        controller.getCars();
     }, function(){
         console.log('error');
     });
@@ -93,8 +96,7 @@ app.controller('MovieCarController', ['$http', function($http){
   }
 
   /*********    Update route      ********/
-  this.updateCar = function(car){
-
+  this.editCar = function(car){
     $http({
       method: 'PUT',
       url: '/cars/' + car._id,
@@ -108,12 +110,20 @@ app.controller('MovieCarController', ['$http', function($http){
         notes: this.editedNotes,
         availability: this.editedAvailability
       }
-    }).then((response) => {
-      this.getCars();
-    }, (error) => {
-      console.log(error.message)
+    }).then(response => {
+      controller.make= "";
+      controller.model= "";
+      controller.year= "";
+      controller.color= "";
+      controller.tags= "";
+      controller.image= "";
+      controller.note= "";
+      controller.availability= false;
+      controller.getCars();
+    }, error => {
+      console.log(error);
     })
-  }
+  };
 
   this.logIn = function(){
         $http({
@@ -127,13 +137,30 @@ app.controller('MovieCarController', ['$http', function($http){
             console.log(response);
         })
     }
+
+    /*********    Show and Reveal Functions      ********/
+    this.showAddCar = false;
+    this.showEdit = false;
     this.showLogin = false;
     this.showCreate = false;
+
+    this.toggleAddCar = function(){
+        this.showAddCar =  !this.showAddCar;
+    }
+    this.toggleEdit = function(){
+      this.showEdit = !this.showEdit;
+    }
     this.toggleLogin = function(){
       this.showLogin = !this.showLogin;
     }
     this.toggleCreate = function(){
       this.showCreate = !this.showCreate;
     }
+
+
+
+
+
+
   this.getCars();
 }]);
