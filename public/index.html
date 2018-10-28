@@ -16,7 +16,7 @@
   <body ng-controller="MovieCarController as ctrl">
     <div class="container">
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
-      <a ng-click="ctrl.toggleReveal()" class="button button-primary" href="#" >Add New Car</a>
+      <a ng-click="ctrl.toggleReveal()" class="button button-primary"  >Add New Car</a>
       <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
       <!-- ************* Form to add a new car ******************* -->
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.reveal">
@@ -141,7 +141,7 @@
 
                         <label for="exampleMessage">Notes</label>
                         <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
-                        <input class="button-primary" type="submit" value="Apply Changes" onclick="closeModal()">
+                        <input class="button-primary" type="submit" value="Apply Changes">
                       </div>
                     </form>
                 </div></td>
