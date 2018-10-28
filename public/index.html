@@ -5,6 +5,7 @@
     <title>Lights, Camera, Drive!</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/modal.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
 
     <link rel="stylesheet" href="./css/normalize.css">
@@ -15,7 +16,7 @@
   <body ng-controller="MovieCarController as ctrl">
     <div class="container">
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
-      <a ng-click="ctrl.toggleReveal()" class="button button-primary" href="#" >Add New Car</a>
+      <a ng-click="ctrl.toggleReveal()" class="button button-primary"  >Add New Car</a>
       <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
       <!-- ************* Form to add a new car ******************* -->
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.reveal">
@@ -62,7 +63,7 @@
           <label for="exampleMessage">Notes</label>
           <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
 
-          <input class="button-primary" type="submit" value="List New Car">
+          <input class="button-primary" ng-click="ctrl.toggleReveal()" type="submit" value="List New Car">
         </div>
       </form>
       <!-- ************* Show all cars ******************* -->
@@ -87,7 +88,7 @@
             <td>{{car.model}}</td>
             <td>{{car.year}}</td>
             <td>{{car.color}}</td>
-            <td>{{car.tags[1]}}</td>
+            <td>{{car.tags}}</td>
             <td><img src="{{car.image}}" alt="{{car.make}}"  style="width:100px;/"></td>
             <td>{{car.notes}}</td>
             <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
@@ -140,7 +141,7 @@
 
                         <label for="exampleMessage">Notes</label>
                         <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
-                        <input class="button-primary" type="submit" value="Apply Changes" onclick="closeModal()">
+                        <input class="button-primary" type="submit" value="Apply Changes">
                       </div>
                     </form>
                 </div></td>
