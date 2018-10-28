@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 require('dotenv').config()
+const session = require('express-session');
 
 // // =======================================
 // //             SCHEMA & SEED
@@ -15,13 +16,26 @@ require('dotenv').config()
 // =======================================
 //              AUTH
 // =======================================
-// const session = require('express-session');
+
+
+// =======================================
+// To work on LOCAL comment out these next 5 lines
+// =======================================
+app.use(session({
+    secret: process.env.SECRET || process.env.HEROKU_SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+
+// ===================================================
+// To work on LOCAL comment back in these next 5 lines
+// ===================================================
 // app.use(session({
-//     secret: process.env.SECRET || process.env.HEROKU_SECRET,
+//     secret:'feedmeseymour',
 //     resave: false,
 //     saveUninitialized: false
 // }));
-
 // =======================================
 //              PORT
 // =======================================
@@ -66,6 +80,9 @@ app.use(express.static('public'));
 // =======================================
 const carsController = require('./controllers/cars.js')
 app.use('/cars', carsController)
+
+const sessionsController = require('./controllers/sessions.js')
+app.use('/sessions', sessionsController)
 
 // =======================================
 //            ROUTES

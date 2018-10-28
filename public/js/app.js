@@ -65,6 +65,22 @@ app.controller('MovieCarController', ['$http', function($http){
         console.log('error');
     });
   }
+  // <!--create User -->
+  this.createUser = function(){
+    $http({
+        method:'POST',
+        url:'/users',
+        data: {
+            username: this.username,
+            password: this.password
+        }
+    }).then(function(response){
+        console.log(response);
+    })
+}
+
+
+
 
   /*********    Delete route      ********/
   this.deleteCar = function(car){
@@ -77,7 +93,8 @@ app.controller('MovieCarController', ['$http', function($http){
   }
 
   /*********    Update route      ********/
-  this.updateCar = (car) => {
+  this.updateCar = function(car){
+
     $http({
       method: 'PUT',
       url: '/cars/' + car._id,
@@ -97,5 +114,26 @@ app.controller('MovieCarController', ['$http', function($http){
       console.log(error.message)
     })
   }
+
+  this.logIn = function(){
+        $http({
+            method:'POST',
+            url:'/sessions',
+            data: {
+                username:this.username,
+                password:this.password
+            }
+        }).then(function(response){
+            console.log(response);
+        })
+    }
+    this.showLogin = false;
+    this.showCreate = false;
+    this.toggleLogin = function(){
+      this.showLogin = !this.showLogin;
+    }
+    this.toggleCreate = function(){
+      this.showCreate = !this.showCreate;
+    }
   this.getCars();
 }]);
