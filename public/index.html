@@ -18,6 +18,7 @@
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
       <a ng-click="ctrl.toggleReveal()" class="button button-primary"  >Add New Car</a>
       <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+
       <!-- ************* Form to add a new car ******************* -->
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.reveal">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
@@ -93,7 +94,7 @@
             <td>{{car.notes}}</td>
             <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
             <td><button ng-click="ctrl.deleteCar(car)" class="button"><img src="/assets/delete.png" style="width:20px;"/></button></td>
-            <td><button class="button" id="openModal"><img src="/assets/edit.png" style="width:20px;"/></button>
+            <td><button  class="button" id="openModal"><img src="/assets/edit.png" style="width:20px;"/></button>
               <!-- ************* Form to edit a car ******************* -->
               <div id="modal">
                 <div id="modal-textbox">
@@ -103,7 +104,7 @@
                         <div class="row">
                           <div class="six columns">
                             <label>Enter Make</label>
-                            <input class="u-full-width" type="text" ng-model="ctrl.editedMake" value="" required/>
+                            <input class="u-full-width" type="text" ng-model="ctrl.editedMake" placeholder="{{car.make}}" required/>
                           </div>
                           <div class="six columns">
                             <label>Enter Model</label>

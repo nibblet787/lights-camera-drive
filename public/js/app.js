@@ -77,7 +77,8 @@ app.controller('MovieCarController', ['$http', function($http){
   }
 
   /*********    Update route      ********/
-  this.updateCar = (car) => {
+  this.updateCar = function(car){
+
     $http({
       method: 'PUT',
       url: '/cars/' + car._id,
