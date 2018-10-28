@@ -10,10 +10,9 @@ app.controller('MovieCarController', ['$http', function($http){
   this.note= "";
   this.availability= false;
   const controller = this;
-  this.reveal = false;
-  this.toggleReveal =()=>{
-      this.reveal =  !this.reveal;
-   }
+
+
+
   /*********    Show route      ********/
   this.getCars = function(){
     $http({
@@ -127,13 +126,30 @@ app.controller('MovieCarController', ['$http', function($http){
             console.log(response);
         })
     }
+
+    /*********    Show and Reveal Functions      ********/
+    this.showAddCar = false;
+    this.showEdit = false;
     this.showLogin = false;
     this.showCreate = false;
+
+    this.toggleAddCar = function(){
+        this.showAddCar =  !this.showAddCar;
+    }
+    this.toggleEdit = function(){
+      this.showEdit = !this.showEdit;
+    }
     this.toggleLogin = function(){
       this.showLogin = !this.showLogin;
     }
     this.toggleCreate = function(){
       this.showCreate = !this.showCreate;
     }
+
+
+
+
+
+
   this.getCars();
 }]);
