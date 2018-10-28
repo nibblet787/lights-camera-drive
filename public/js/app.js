@@ -17,11 +17,14 @@ app.controller('MovieCarController', ['$http', function($http){
   this.getCars = function(){
     $http({
       method:'GET',
-      url: '/cars',
+      url: '/cars'
     }).then(function(response){
-      controller.cars = response.data;
-    });
-  };
+      console.log(response.data);
+      controller.cars = response.data
+    }, error=>{
+            console.log(error);
+        })
+    };
 
 
   /*********    Create route      ********/
@@ -40,8 +43,7 @@ app.controller('MovieCarController', ['$http', function($http){
         availability: this.availability,
       }
     }).then(function(response){
-        controller.getCars();
-        controller.make= "";
+        controller.make= " ";
         controller.model= "";
         controller.year= "";
         controller.color= "";
@@ -49,6 +51,8 @@ app.controller('MovieCarController', ['$http', function($http){
         controller.image= "";
         controller.note= "";
         controller.availability= false;
+        controller.cars.unshift(response.data)
+        controller.getCars();
     }, function(){
         console.log('error');
     });
@@ -92,8 +96,7 @@ app.controller('MovieCarController', ['$http', function($http){
   }
 
   /*********    Update route      ********/
-  this.updateCar = function(car){
-
+  this.editCar = function(car){
     $http({
       method: 'PUT',
       url: '/cars/' + car._id,
@@ -107,12 +110,20 @@ app.controller('MovieCarController', ['$http', function($http){
         notes: this.editedNotes,
         availability: this.editedAvailability
       }
-    }).then((response) => {
-      this.getCars();
-    }, (error) => {
-      console.log(error.message)
+    }).then(response => {
+      controller.make= "";
+      controller.model= "";
+      controller.year= "";
+      controller.color= "";
+      controller.tags= "";
+      controller.image= "";
+      controller.note= "";
+      controller.availability= false;
+      controller.getCars();
+    }, error => {
+      console.log(error);
     })
-  }
+  };
 
   this.logIn = function(){
         $http({
