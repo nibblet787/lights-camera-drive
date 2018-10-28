@@ -16,8 +16,8 @@
   <body ng-controller="MovieCarController as ctrl">
     <div class="container">
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
-      <a ng-click="ctrl.toggleReveal()" class="button button-primary">Add New Car</a>
-      <a ng-click="ctrl.createCarSeed()" class="button button-primary">Seed Cars</a>
+      <a ng-click="ctrl.toggleReveal()" class="button button-primary"  >Add New Car</a>
+      <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
       <!-- ************* Form to add a new car ******************* -->
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.reveal">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
@@ -93,11 +93,11 @@
             <td>{{car.notes}}</td>
             <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
             <td><button ng-click="ctrl.deleteCar(car)" class="button"><img src="/assets/delete.png" style="width:20px;"/></button></td>
-            <td><button class="button" id="openModal"><img src="/assets/edit.png" style="width:20px;"/></button></td>
+            <td><button class="button" id="openModal"><img src="/assets/edit.png" style="width:20px;"/></button>
               <!-- ************* Form to edit a car ******************* -->
               <div id="modal">
                 <div id="modal-textbox">
-                  <a id="close"><img src="/assets/close.png" style="width:15px;" /></a>
+                  <a id="close" href="#"><img src="/assets/close.png" style="width:15px;" /></a>
                     <form ng-submit="ctrl.updateCar(car)">
                       <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
                         <div class="row">
@@ -144,12 +144,12 @@
                         <input class="button-primary" type="submit" value="Apply Changes">
                       </div>
                     </form>
-                </div>
+                </div></td>
           </tr>
         </tbody>
       </table>
     </div>
-<script src="js/modal.js" charset="utf-8"></script>
+<!-- <script src="js/modal.js" charset="utf-8"></script> -->
     </div>
   </body>
 </html>
