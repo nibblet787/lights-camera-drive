@@ -17,19 +17,19 @@ const session = require('express-session');
 //              AUTH
 // =======================================
 
-// app.use(session({
-//     secret: process.env.SECRET || process.env.HEROKU_SECRET,
-//     resave: false,
-//     saveUninitialized: false
-// }));
-
-
-
 app.use(session({
-    secret:'feedmeseymour',
+    secret: process.env.SECRET || process.env.HEROKU_SECRET,
     resave: false,
     saveUninitialized: false
 }));
+
+
+
+// app.use(session({
+//     secret:'feedmeseymour',
+//     resave: false,
+//     saveUninitialized: false
+// }));
 // =======================================
 //              PORT
 // =======================================
