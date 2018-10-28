@@ -15,26 +15,26 @@ require('dotenv').config()
 // =======================================
 //              AUTH
 // =======================================
-const session = require('express-session');
-app.use(session({
-    secret: process.env.SECRET || process.env.HEROKU_SECRET,
-    resave: false,
-    saveUninitialized: false
-}));
+// const session = require('express-session');
+// app.use(session({
+//     secret: process.env.SECRET || process.env.HEROKU_SECRET,
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
 // =======================================
 //              PORT
 // =======================================
 // Allow use of Heroku's port or your own local port, depending on the environment
-  // const PORT = process.env.PORT || 3000;
-const PORT = process.env.PORT || process.env.DB_PORT;
+  const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || process.env.DB_PORT;
 // =======================================
 //              GLOBAL CONFIG
 // =======================================
 const db = mongoose.connection;
 // How to connect to the database either via heroku or locally
-const MONGODB_URI = process.env.MONGODB_URI || process.env.DB_USER;
-//const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'movieCars';
+// const MONGODB_URI = process.env.MONGODB_URI || process.env.DB_USER || 'mongodb://localhost/'+ 'movieCars';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/'+ 'movieCars';
 
 // Connect to Mongo
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true});
