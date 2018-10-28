@@ -12,12 +12,54 @@
     <link rel="stylesheet" href="./css/skeleton.css">
     <link rel="stylesheet" href="./css/app.css">
   </head>
-
+  <header>
+    <h1>Lights, Camera, Drive</h1> <span>
+      <!--placed login button here for testing however I believe it should be top right? -->
+      <a ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
+      <!--placed Create User button here for testing however I believe it should be top right? -->
+      <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
+    </span>
+  </header>
   <body ng-controller="MovieCarController as ctrl">
     <div class="container">
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
       <a ng-click="ctrl.toggleReveal()" class="button button-primary"  >Add New Car</a>
       <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+
+      <!--LOGIN FORM: -->
+      <form ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
+        <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+          <div class="row">
+            <div class="">
+              <label>Username</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.username" placeholder="username" required/>
+            </div>
+            <div class="">
+              <label>Password</label>
+              <input class="u-full-width" type="password" ng-model="ctrl.password" placeholder="password" required/>
+            </div>
+            <input class="button-primary" ng-click="ctrl.toggleLogin()" type="submit" value="login">
+          </div>
+        </div>
+        </div>
+      </form>
+<!--create User -->
+      <form ng-submit="ctrl.createUser()" ng-show="ctrl.showCreate">
+        <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+          <div class="row">
+            <div class="">
+              <label>Username</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.username" placeholder="username" required/>
+            </div>
+            <div class="">
+              <label>Password</label>
+              <input class="u-full-width" type="password" ng-model="ctrl.password" placeholder="password" required/>
+            </div>
+            <input class="button-primary" ng-click="ctrl.toggleCreate()" type="submit" value="login">
+          </div>
+        </div>
+        </div>
+      </form>
 
       <!-- ************* Form to add a new car ******************* -->
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.reveal">
