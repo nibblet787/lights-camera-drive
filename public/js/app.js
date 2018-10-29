@@ -149,7 +149,8 @@ app.controller('MovieCarController', ['$http', function($http){
     this.toggleAddCar = function(){
         this.showAddCar =  !this.showAddCar;
     }
-    this.toggleEdit = function(){
+    this.toggleEdit = function(car){
+      this.car = car
       this.showEdit = !this.showEdit;
     }
     this.toggleLogin = function(){
