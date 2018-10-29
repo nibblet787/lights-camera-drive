@@ -14,19 +14,16 @@
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <header>
-
       <h1>Lights, Camera... Drive!</h1>
-<!--placed login button here for testing however I believe it should be top right? -->
+
   <nav class='headerNav'>
     <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
-
     <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
-
-<!--placed Create User button here for testing however I believe it should be top right? -->
     <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
   </nav>
 
     </header>
+
     <body ng-controller="MovieCarController as ctrl">
       <div class="container">
         <h3 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h3>
@@ -172,18 +169,20 @@
   <div class="container allCarsView">
     <div class='individualsCars'  ng-repeat="car in ctrl.cars">
 
-        <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 200px; " alt="pics of cars">
+        <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
         <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
         <label class="car-mini-label">Model Year: {{ car.year }}</label>
         <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
         <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
-          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
-            <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Car is Available' : 'Car is not Available'}}</label>
+          <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+            <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
+          <!-- <div class="info-buttons"> -->
             <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
             <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+          <!-- </div> -->
 
 
-<!-- ************* Form to edit a car - RELOCATED TO HERE FOR TESTING ******************* -->
+<!-- ************* Form to edit a car ******************* -->
             <form class='editForm' ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
 
               <div class="row">

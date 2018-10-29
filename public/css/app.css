@@ -25,6 +25,12 @@ h3 {
   border-bottom:1px solid grey;
 }
 
+.info-buttons {
+  /* display: flex;
+  justify-content: center; */
+
+}
+
 .del-edit:hover {
   cursor: pointer;
 }
@@ -42,7 +48,7 @@ h3 {
   cursor: pointer;
 }
 
-#modal {
+/* #modal {
 	background-color: rgba(0,0,0,0.4);
 	position: fixed;
 	top: 0;
@@ -64,22 +70,24 @@ h3 {
 
 #close:hover {
   cursor: pointer;
-}
+} */
 .container{
 
   display:flex;
   flex-direction: row;
-  width:750px;
+  width: 800px;
   flex-wrap: wrap;
   margin:0 auto;
   justify-content: space-between;
 }
 
 .individualsCars {
-  margin: 10px;
-  width:200px;
+  border: 1px solid grey;
+  margin: 10px 5px;
+  width: 250px;
 }
 
 .editForm {
-  width:200px;
+  width:228px;
+  padding: 0 11px;
 }
