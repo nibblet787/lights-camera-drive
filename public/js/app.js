@@ -12,7 +12,7 @@ app.controller('MovieCarController', ['$http', function($http){
   this.password ='';
   this.availability= false;
   const controller = this;
-
+  this.currentUser = null;
 
 
   /*********    Show route      ********/
@@ -126,7 +126,7 @@ app.controller('MovieCarController', ['$http', function($http){
       console.log(error);
     })
   };
-
+    /******** Log In Function ***********/
   this.logIn = function(){
         $http({
             method:'POST',
