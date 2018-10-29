@@ -182,7 +182,9 @@ this.toggleWhenUserIsLoggedIn = function(){
     };
 
     this.toggleInfo = function(){
+      if(this.showWhenLoggedIn === true){
       this.showInfo = !this.showInfo
+    }
     }
 
 

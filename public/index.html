@@ -175,10 +175,10 @@
           <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 200px; " alt="pics of cars">
           <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
           <label class="car-mini-label">Model Year: {{ car.year }}</label>
-          <label ng-if='ctrl.showInfo' class="car-mini-label">Car Color: {{ car.color }}</label>
-          <label ng-if='ctrl.showInfo' class="car-mini-label">Car tags: {{ car.tags }}</label>
-            <label ng-if='ctrl.showInfo' class="car-mini-label">Car notes: {{ car.notes }}</label>
-              <label ng-if='ctrl.showInfo' class="car-mini-label">Car Availablity: {{car.availability ? 'Car is Available' : 'Car is not Available'}}</label>
+          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
+          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
+            <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+              <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Car is Available' : 'Car is not Available'}}</label>
         </div>
       </div>
 
