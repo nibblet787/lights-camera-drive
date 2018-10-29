@@ -128,6 +128,15 @@ app.controller('MovieCarController', ['$http', function($http){
     })
   };
 
+  this.showWhenLoggedIn = false;
+
+this.toggleWhenUserIsLoggedIn = function(){
+  this.showWhenLoggedIn = !this.showWhenLoggedIn;
+}
+
+
+
+/*********     Login function      ********/
   this.logIn = function(){
         $http({
             method:'POST',
@@ -138,8 +147,25 @@ app.controller('MovieCarController', ['$http', function($http){
             }
         }).then(function(response){
             console.log(response);
+            controller.toggleWhenUserIsLoggedIn();
         })
     }
+
+  /*********     Logout function      ********/
+  this.logout = function(){
+    $http({
+      method: 'PUT',
+      url: '/sessions',
+      data: {
+        username: this.username,
+        password: this.password
+      }
+    }).then(function(response){
+        console.log(response);
+        this.username = '';
+        this.password = '';
+    })
+  }
 
     /*********    Show and Reveal Functions      ********/
     this.showAddCar = false;
