@@ -12,7 +12,7 @@ app.controller('MovieCarController', ['$http', function($http){
   this.password ='';
   this.availability= false;
   const controller = this;
-
+  this.indexOfEditFormShow = 1;
 
 
   /*********    Show route      ********/
@@ -112,15 +112,16 @@ app.controller('MovieCarController', ['$http', function($http){
         notes: this.editedNotes,
         availability: this.editedAvailability
       }
-    }).then(response => {
-      controller.make= "";
-      controller.model= "";
-      controller.year= "";
-      controller.color= "";
-      controller.tags= "";
-      controller.image= "";
-      controller.note= "";
-      controller.availability= false;
+    }).then(function(response){
+      response.data = {};
+      // controller.make= "";
+      // controller.model= "";
+      // controller.year= "";
+      // controller.color= "";
+      // controller.tags= "";
+      // controller.image= "";
+      // controller.note= "";
+      // controller.availability= false;
       controller.getCars();
     }, error => {
       console.log(error);
@@ -145,19 +146,20 @@ app.controller('MovieCarController', ['$http', function($http){
     this.showEdit = false;
     this.showLogin = false;
     this.showCreate = false;
+    // this.car = {};
 
     this.toggleAddCar = function(){
         this.showAddCar =  !this.showAddCar;
-    }
+    };
     this.toggleEdit = function(){
-      this.showEdit = !this.showEdit;
-    }
+        this.showEdit = !this.showEdit;
+    };
     this.toggleLogin = function(){
-      this.showLogin = !this.showLogin;
-    }
+        this.showLogin = !this.showLogin;
+    };
     this.toggleCreate = function(){
-      this.showCreate = !this.showCreate;
-    }
+        this.showCreate = !this.showCreate;
+    };
 
 
 

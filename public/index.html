@@ -25,7 +25,9 @@
       <h1 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h1>
       <a ng-click="ctrl.toggleAddCar()" class="button button-primary"  >Add New Car</a>
       <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+
 <!-- ************* Login Form ******************* -->
+
       <form ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
@@ -40,9 +42,10 @@
             <input class="button-primary" ng-click="ctrl.toggleLogin()" type="submit" value="Login">
           </div>
         </div>
-        </div>
       </form>
+
 <!-- ************* Create User ******************* -->
+
       <form ng-submit="ctrl.createUser()" ng-show="ctrl.showCreate">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
@@ -57,10 +60,10 @@
             <input class="button-primary" ng-click="ctrl.toggleCreate()" type="submit" value="Create User">
           </div>
         </div>
-        </div>
       </form>
 
 <!-- ************* Form to add a new car ******************* -->
+
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.showAddCar">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
@@ -104,12 +107,13 @@
 
           <label for="exampleMessage">Notes</label>
           <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
-
           <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
         </div>
       </form>
 
 <!-- ************* Form to edit a car ******************* -->
+
+    <!-- <div>
       <form ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
@@ -155,8 +159,10 @@
           <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
           <input class="button-primary" type="submit" ng-click="ctrl.toggleEdit()" value="Apply Changes">
         </div>
-      </form>
+      </form> -->
+
 <!-- ************* Show all cars ******************* -->
+
            <table class="u-full-width">
               <thead>
                 <tr>
@@ -183,9 +189,58 @@
                   <td>{{car.notes}}</td>
                   <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
                   <td><button ng-click="ctrl.deleteCar(car)" class="button"><img src="/assets/delete.png" style="width:20px;"/></button></td>
-                  <td><button  ng-click="ctrl.toggleEdit()" class="button" ><img src="/assets/edit.png" style="width:20px;"/></button></td>
-                </tr>
-              </tbody>
-            </table>
+                  <td><button  ng-click="ctrl.toggleEdit()" class="button" ><img src="/assets/edit.png" style="width:20px;"/></button>
+<!-- ************* Form to edit a car - RELOCATED TO HERE FOR TESTING ******************* -->
+                      <form ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
+                        <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+                        <div class="row">
+                          <div class="six columns">
+                            <label>Enter Make</label>
+                              <input class="u-full-width" type="text" ng-model="ctrl.editedMake" placeholder="{{car.make}}" required/>
+                          </div>
+                          <div class="six columns">
+                            <label>Enter Model</label>
+                              <input class="u-full-width" type="text" ng-model="ctrl.editedModel" value="model" placeholder="{{car.model}}" required/>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="six columns">
+                              <label>Enter Year</label>
+                                <input class="u-full-width" type="year" ng-model="ctrl.editedYear" placeholder="YYYY"/>
+                          </div>
+                          <div class="six columns">
+                            <label>Enter Color</label>
+                              <input class="u-full-width" type="text" ng-model="ctrl.editedColor" placeholder="Color"/>
+                          </div>
+                        </div>
+
+                        <label for="exampleMessage">Add Image</label>
+                        <input class="u-full-width"type="text" ng-model="ctrl.editedImage" placeholder="Add Image Path"/>
+
+                        <div class="row">
+                          <div class="six columns">
+                            <label class="example-send-yourself-copy">
+                              <input type="checkbox" ng-model="ctrl.editedAvailability"/>
+                                  <span class="label-body"> Available</span>
+                            </label>
+                          </div>
+                          <div class="six columns">
+                            <label class="container">Tags:
+                              <input type="text" ng-model="ctrl.editedTags" value=""/>
+                            </label>
+                          </div>
+                        </div>
+
+                        <label for="exampleMessage">Notes</label>
+                        <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
+                        <input class="button-primary" type="submit" ng-click="ctrl.toggleEdit()" value="Apply Changes">
+                      </div>
+                    </form>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
   </body>
 </html>
