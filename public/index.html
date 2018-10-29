@@ -171,10 +171,14 @@
 <!-- ************* Show all cars ******************* -->
 
       <div class="container" ng-repeat="car in ctrl.cars" style="display: flex; flex-direction: row;">
-        <div class="five.rows">
-          <img class="car-thumb" src="{{ car.image }}" ng-click="ctrl.toggleInfo()" style="width: 200px; " alt="pics of cars">
+        <div class="five.rows" >
+          <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 200px; " alt="pics of cars">
           <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
           <label class="car-mini-label">Model Year: {{ car.year }}</label>
+          <label ng-if='ctrl.showInfo' class="car-mini-label">Car Color: {{ car.color }}</label>
+          <label ng-if='ctrl.showInfo' class="car-mini-label">Car tags: {{ car.tags }}</label>
+            <label ng-if='ctrl.showInfo' class="car-mini-label">Car notes: {{ car.notes }}</label>
+              <label ng-if='ctrl.showInfo' class="car-mini-label">Car Availablity: {{car.availability ? 'Car is Available' : 'Car is not Available'}}</label>
         </div>
       </div>
 
@@ -206,7 +210,7 @@
                   <td>{{car.notes}}</td>
                   <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
                   <td><img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/></td>
-                  <td><img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+                  <td><img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/></td>
 <!-- ************* Form to edit a car - RELOCATED TO HERE FOR TESTING ******************* -->
                       <form ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
                         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
