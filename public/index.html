@@ -18,7 +18,7 @@
       <h1>Lights, Camera... Drive!</h1> <span>
 <!--placed login button here for testing however I believe it should be top right? -->
 
-        <a ng-click="ctrl.logout()" class="button button-primary" ng-if='!ctrl.showWhenLoggedIn'>Logout</a>
+        <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
 
         <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
 
@@ -35,16 +35,16 @@
       </div>
 <!-- ************* Login Form ******************* -->
 
-      <form ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
+      <form class="username" ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
             <div class="">
               <label>Username</label>
-              <input class="u-full-width" type="text" ng-model="ctrl.username" placeholder="username" required/>
+              <input class="u-full-width username" type="text" ng-model="ctrl.username" placeholder="username" required/>
             </div>
             <div class="">
               <label>Password</label>
-              <input class="u-full-width" type="password" ng-model="ctrl.password" placeholder="password" required/>
+              <input class="u-full-width password" type="password" ng-model="ctrl.password" placeholder="password" required/>
             </div>
             <input class="button-primary" ng-click="ctrl.toggleLogin()" type="submit" value="Login">
           </div>
@@ -58,11 +58,11 @@
           <div class="row">
             <div class="">
               <label>Username</label>
-              <input class="u-full-width" type="text" ng-model="ctrl.username" placeholder="username" required/>
+              <input class="u-full-width username" type="text" ng-model="ctrl.username" placeholder="username" required/>
             </div>
             <div class="">
               <label>Password</label>
-              <input class="u-full-width" type="password" ng-model="ctrl.password" placeholder="password" required/>
+              <input class="u-full-width password" type="password" ng-model="ctrl.password" placeholder="password" required/>
             </div>
             <input class="button-primary" ng-click="ctrl.toggleCreate()" type="submit" value="Create User">
           </div>

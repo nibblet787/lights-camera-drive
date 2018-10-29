@@ -20,8 +20,8 @@ h1 {
 }
 
 
-dsgds {
-  flex-direction:
+.username, .password {
+  color: black;
 }
 
 .car-mini-label {

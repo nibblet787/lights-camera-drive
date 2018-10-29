@@ -153,19 +153,12 @@ this.toggleWhenUserIsLoggedIn = function(){
 
   /*********     Logout function      ********/
   this.logout = function(){
-    $http({
-      method: 'PUT',
-      url: '/sessions',
-      data: {
-        username: this.username,
-        password: this.password
-      }
-    }).then(function(response){
-        console.log(response);
-        this.username = '';
-        this.password = '';
-    })
-  }
+        this.username = "";
+        this.password = "";
+        this.toggleWhenUserIsLoggedIn();
+        this.getCars();
+      };
+
 
     /*********    Show and Reveal Functions      ********/
     this.showAddCar = false;
