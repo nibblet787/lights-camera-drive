@@ -1,5 +1,55 @@
 module.exports = [
   {
+    make: 'Camaro',
+    model: 'Chevrolet',
+    year: 1968,
+    color: 'Blue and White',
+    tag: ["hide-away headlights", "shaved door handles"],
+    image: 'https://i.imgur.com/u0gajsO.jpg',
+    notes: 'sexy' ,
+    availability: false
+  },
+  {
+    make: 'Challenger',
+    model: 'Dodge',
+    year: 1970,
+    color: 'Orange and Black',
+    tag: ["T/A", "hood scoop"],
+    image: 'https://i.imgur.com/7AXuRWl.jpg',
+    notes: 'Very loud' ,
+    availability: true
+  },
+  {
+    make: 'Charger',
+    model: 'Dodge',
+    year: 1969,
+    color: 'Black',
+    tag: ["chrome", "hide-away headlights"],
+    image: 'https://i.imgur.com/KKDcx0G.jpg',
+    notes: 'shiny' ,
+    availability: true
+  },
+  {
+    make: 'GTO',
+    model: 'Pontiac',
+    year: 1969,
+    color: 'Orange',
+    tag: ["pinstripes", "hood scoop"],
+    image: 'https://i.imgur.com/Zkp5e2v.jpg',
+    notes: 'brightly colored' ,
+    availability: false
+  },
+  {
+    make: 'Grand National',
+    model: 'Buick',
+    year: 1986,
+    color: 'Black',
+    tag: ["ripped seats"],
+    image: 'https://i.imgur.com/uX1FPWJ.jpg',
+    notes: 'barely runs' ,
+    availability: false
+  },
+  {
     make: 'Custom',
     model: 'C INDY',
     year: 2000,
@@ -11,42 +61,42 @@ module.exports = [
   },
   {
     make: 'Desoto',
-    model: 'C4360A',
+    model: 'Taxi',
     year: 1948,
     color: 'Yellow',
     tag: ['manual','movie','tan'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=5579&imagenum=1',
-    notes: '1948 Desoto Taxi, Yellow Exterior With Tan Cloth Interior, Runs Okay. Very Clean Inside And Out. Contact Our Graphics Dept For All Your Custom Needs. **Must Be Transported** 12/17' ,
+    notes: 'Yellow Exterior With Tan Cloth Interior' ,
     availability: false
   },
   {
     make: 'Dodge',
-    model: 'C3431A',
+    model: 'Van',
     year: 1977,
     color: 'Purple',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=5724&imagenum=1',
-    notes: '1977 Dodge Cargo Van. Beautiful New Paint. Exterior Purple, Interior Brown And Tan. Automatic Transmission. Must Be Transported. 10/17' ,
+    notes: 'Beautiful New Paint. Exterior Purple',
     availability: true
   },
   {
     make: 'Plymouth',
-    model: 'C8410A',
+    model: 'Valiant',
     year: 1963,
     color: 'Red',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=6644&imagenum=1',
-    notes: '1963 Plymouth Valiant Convertible. Red Exterior With A White Top, Interior Is Red And Tan. Great Period Peice. Runs And Drives Ok. 1/18' ,
+    notes: 'Red Exterior With A White Top, Interior Is Red And Tan',
     availability: true
   },
   {
     make: 'Mitsubishi',
-    model: 'C1992',
+    model: 'Eclipse',
     year: 1998,
     color: 'Orange',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=6769&imagenum=1',
-    notes: '1998 Mitsubishi Eclipse. Runs And Drives. Has A Sunroof. 09/18' ,
+    notes: 'Runs And Drives. Has A Sunroof.',
     availability: true
   },
 ];
