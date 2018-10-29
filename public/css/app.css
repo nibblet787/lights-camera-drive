@@ -1,6 +1,23 @@
-body {
-  background-color: lightblue;
+header {
+  background: url('http://www.psdgraphics.com/file/metal-diamond-plate.jpg');
 }
+
+body {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+.del-edit:hover {
+  cursor: pointer;
+}
+
+
+
+
 
 
 #modal {
