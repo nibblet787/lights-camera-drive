@@ -20,9 +20,17 @@ h1 {
 }
 
 
+dsgds {
+  flex-direction:
+}
 
+.car-mini-label {
+  text-align: center;
+}
 
-
+.car-thumb:hover {
+  cursor: pointer;
+}
 
 #modal {
 	background-color: rgba(0,0,0,0.4);

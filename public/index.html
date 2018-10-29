@@ -166,7 +166,17 @@
 
 <!-- ************* Show all cars ******************* -->
 
-           <table class="u-full-width">
+      <div class="container" ng-repeat="car in ctrl.cars" style="display: flex; flex-direction: row;">
+        <div class="five.rows">
+          <img class="car-thumb" src="{{ car.image }}" ng-click="ctrl.toggleInfo()" style="width: 200px; " alt="pics of cars">
+          <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
+          <label class="car-mini-label">Model Year: {{ car.year }}</label>
+        </div>
+      </div>
+
+
+        <div class="container"  ng-show="ctrl.showInfo">
+           <table class="u-full-width" >
               <thead>
                 <tr>
                   <th>Make</th>
@@ -183,12 +193,12 @@
               </thead>
               <tbody ng-repeat="car in ctrl.cars">
                 <tr>
-                  <td>{{car.make}}</td>
-                  <td>{{car.model}}</td>
-                  <td>{{car.year}}</td>
+                  <!-- <td>{{car.make}}</td> -->
+                  <!-- <td>{{car.model}}</td> -->
+                  <!-- <td>{{car.year}}</td> -->
                   <td>{{car.color}}</td>
                   <td>{{car.tags}}</td>
-                  <td><img src="{{car.image}}" alt="{{car.make}}"  style="width:100px;/"></td>
+                  <!-- <td><img src="{{car.image}}" alt="{{car.make}}"  style="width:100px;/"></td> -->
                   <td>{{car.notes}}</td>
                   <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
                   <td><img class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/></td>
@@ -245,5 +255,6 @@
                 </tbody>
               </table>
             </div>
+          </div>
   </body>
 </html>
