@@ -1,5 +1,8 @@
 header {
   background: url('http://www.psdgraphics.com/file/metal-diamond-plate.jpg');
+  display: flex;
+  justify-content: space-between;
+  height:120px;
 }
 
 body {
@@ -10,9 +13,22 @@ body {
 h1 {
   font-family: 'Metal Mania', cursive;
   text-align: center;
-  border: 1px solid grey;
+  height:60px;
   /* width: 50%; */
-  background-color: rgba(79, 79, 79,0.6);
+  background-color: rgba(79, 79, 79,0.99);
+  padding: 8px 10px;
+
+}
+
+h3 {
+  margin-top:20px;
+  border-bottom:1px solid grey;
+}
+
+.info-buttons {
+  /* display: flex;
+  justify-content: center; */
+
 }
 
 .del-edit:hover {
@@ -20,8 +36,8 @@ h1 {
 }
 
 
-dsgds {
-  flex-direction:
+.username, .password {
+  color: black;
 }
 
 .car-mini-label {
@@ -32,7 +48,7 @@ dsgds {
   cursor: pointer;
 }
 
-#modal {
+/* #modal {
 	background-color: rgba(0,0,0,0.4);
 	position: fixed;
 	top: 0;
@@ -54,4 +70,24 @@ dsgds {
 
 #close:hover {
   cursor: pointer;
+} */
+.container{
+
+  display:flex;
+  flex-direction: row;
+  width: 800px;
+  flex-wrap: wrap;
+  margin:0 auto;
+  justify-content: space-between;
+}
+
+.individualsCars {
+  border: 1px solid grey;
+  margin: 10px 5px;
+  width: 250px;
+}
+
+.editForm {
+  width:228px;
+  padding: 0 11px;
 }

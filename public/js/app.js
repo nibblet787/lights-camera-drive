@@ -153,25 +153,19 @@ this.toggleWhenUserIsLoggedIn = function(){
 
   /*********     Logout function      ********/
   this.logout = function(){
-    $http({
-      method: 'PUT',
-      url: '/sessions',
-      data: {
-        username: this.username,
-        password: this.password
-      }
-    }).then(function(response){
-        console.log(response);
-        this.username = '';
-        this.password = '';
-    })
-  }
+        this.username = "";
+        this.password = "";
+        this.toggleWhenUserIsLoggedIn();
+        this.getCars();
+      };
+
 
     /*********    Show and Reveal Functions      ********/
     this.showAddCar = false;
     this.showEdit = false;
     this.showLogin = false;
     this.showCreate = false;
+    this.showInfo = false;
     // this.car = {};
 
     this.toggleAddCar = function(){
@@ -187,7 +181,11 @@ this.toggleWhenUserIsLoggedIn = function(){
         this.showCreate = !this.showCreate;
     };
 
-
+    this.toggleInfo = function(){
+      if(this.showWhenLoggedIn === true){
+      this.showInfo = !this.showInfo
+    }
+    }
 
 
 
