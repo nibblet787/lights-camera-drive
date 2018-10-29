@@ -17,6 +17,7 @@
     <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
       <h1>Lights, Camera... Drive!</h1> <span>
 <!--placed login button here for testing however I believe it should be top right? -->
+        <a ng-click="ctrl.logout()" class="button button-primary" ng-hide='ctrl.showWhenLoggedIn'>Logout</a>
         <a ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
 <!--placed Create User button here for testing however I believe it should be top right? -->
         <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
