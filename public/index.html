@@ -13,19 +13,21 @@
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <header>
-    <h1>Lights, Camera, Drive</h1> <span>
+    <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+      <h1>Lights, Camera, Drive</h1> <span>
 <!--placed login button here for testing however I believe it should be top right? -->
-      <a ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
+        <a ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
 <!--placed Create User button here for testing however I believe it should be top right? -->
-      <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
-    </span>
-  </header>
-  <body ng-controller="MovieCarController as ctrl">
-    <div class="container">
-      <h2 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h2>
-      <a ng-click="ctrl.toggleAddCar()" class="button button-primary"  >Add New Car</a>
-      <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
-
+        <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
+      </span>
+    </div>
+    </header>
+    <body ng-controller="MovieCarController as ctrl">
+      <div class="container">
+        <h2 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h2>
+        <a ng-click="ctrl.toggleAddCar()" class="button button-primary"  >Add New Car</a>
+        <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+      </div>
 <!-- ************* Login Form ******************* -->
 
       <form ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
