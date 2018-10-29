@@ -8,6 +8,7 @@ body {
 }
 
 h1 {
+  font-family: 'Metal Mania', cursive;
   text-align: center;
   border: 1px solid grey;
   /* width: 50%; */
