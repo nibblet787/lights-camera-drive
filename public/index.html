@@ -26,8 +26,8 @@
     <body ng-controller="MovieCarController as ctrl">
       <div class="container">
         <h3 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h3>
-        <a ng-click="ctrl.toggleAddCar()" class="button button-primary"  >Add New Car</a>
-        <a ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+        <a ng-click="ctrl.toggleAddCar()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'  >Add New Car</a>
+        <a ng-if='ctrl.showWhenLoggedIn'  ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
       </div>
 <!-- ************* Login Form ******************* -->
 
@@ -201,8 +201,8 @@
                   <!-- <td><img src="{{car.image}}" alt="{{car.make}}"  style="width:100px;/"></td> -->
                   <td>{{car.notes}}</td>
                   <td>{{car.availability ? 'Car is Available' : 'Car is not Available'}}</td>
-                  <td><img class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/></td>
-                  <td><img class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+                  <td><img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/></td>
+                  <td><img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
 <!-- ************* Form to edit a car - RELOCATED TO HERE FOR TESTING ******************* -->
                       <form ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
                         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
