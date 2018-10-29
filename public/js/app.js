@@ -128,6 +128,14 @@ app.controller('MovieCarController', ['$http', function($http){
     })
   };
 
+  this.showWhenLoggedIn = false;
+
+this.toggleWhenUserIsLoggedIn = function(){
+  this.showWhenLoggedIn = !this.showWhenLoggedIn;
+}
+
+
+
 /*********     Login function      ********/
   this.logIn = function(){
         $http({
@@ -139,6 +147,7 @@ app.controller('MovieCarController', ['$http', function($http){
             }
         }).then(function(response){
             console.log(response);
+            controller.toggleWhenUserIsLoggedIn();
         })
     }
 
