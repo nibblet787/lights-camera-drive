@@ -18,12 +18,12 @@
       <h1>Lights, Camera... Drive!</h1>
 <!--placed login button here for testing however I believe it should be top right? -->
   <nav class='headerNav'>
-    <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
+    <a ng-click="ctrl.logout()" class="button button-primary headNavButtons" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
 
-    <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
+    <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary headNavButtons" href="#" >Login</a>
 
 <!--placed Create User button here for testing however I believe it should be top right? -->
-    <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
+    <a ng-click="ctrl.toggleCreate()" class="button button-primary headNavButtons" href="#" >Create User</a>
   </nav>
 
     </header>
