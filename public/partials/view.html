@@ -7,6 +7,7 @@
     <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
     <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
     <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
+    <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
     <a href="#" ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.indexOfEditFormToShow = $index">
       <img class="del-edit" src="/assets/edit-16.png" style="width:20px;" />
     </a>
@@ -51,10 +52,10 @@
         <input class="button-primary" type="submit" value="Apply Changes" ng-click="ctrl.indexOfEditFormToShow = 20000">
       </div>
     </form>
-    <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+  </label>
   </div>
 </div>
-</label>
+
 
 <style>
   .container
