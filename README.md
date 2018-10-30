@@ -30,4 +30,4 @@
 * Add Partial - logged-in user can add new listing
 * Edit Button - logged-in user can edit an existing listing
 * Delete Button - logged-in user can delete a listing
-* **Development Tool:** Seed Button - used to seed listing from seed model file 
+* ***Development Tool:** Seed Button - used to seed listing from seed model file 
