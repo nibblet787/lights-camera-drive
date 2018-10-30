@@ -3,12 +3,13 @@
     <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
     <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
     <label class="car-mini-label">Model Year: {{ car.year }}</label>
-    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
-    <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
-    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
-    <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
-    <a href="#" ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.indexOfEditFormToShow = $index">
+    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
+    
+    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Contact Email: {{ car.email }}</label>
+    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
+    <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+    <a href="#" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' ng-click="ctrl.indexOfEditFormToShow = $index">
       <img class="del-edit" src="/assets/edit-16.png" style="width:20px;" />
     </a>
 
