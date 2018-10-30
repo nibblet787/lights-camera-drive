@@ -6,6 +6,7 @@ module.exports = [
     color: 'Blue and White',
     tag: ["hide-away headlights", "shaved door handles"],
     image: 'https://i.imgur.com/u0gajsO.jpg',
+    email: 'dfgdfghdf@gmail.com',
     notes: 'sexy' ,
     availability: false
   },
@@ -16,6 +17,7 @@ module.exports = [
     color: 'Orange and Black',
     tag: ["T/A", "hood scoop"],
     image: 'https://i.imgur.com/7AXuRWl.jpg',
+    email: 'ghhg@gmail.com',
     notes: 'Very loud' ,
     availability: true
   },
@@ -26,6 +28,7 @@ module.exports = [
     color: 'Black',
     tag: ["chrome", "hide-away headlights"],
     image: 'https://i.imgur.com/KKDcx0G.jpg',
+    email: 'hjjkljk56@gmail.com',
     notes: 'shiny' ,
     availability: true
   },
@@ -36,6 +39,7 @@ module.exports = [
     color: 'Orange',
     tag: ["pinstripes", "hood scoop"],
     image: 'https://i.imgur.com/Zkp5e2v.jpg',
+    email: 'jj77@gmail.com',
     notes: 'brightly colored' ,
     availability: false
   },
@@ -46,6 +50,7 @@ module.exports = [
     color: 'Black',
     tag: ["ripped seats"],
     image: 'https://i.imgur.com/uX1FPWJ.jpg',
+    email: 'sdsdsf@gmail.com',
     notes: 'barely runs' ,
     availability: false
   },
@@ -56,6 +61,7 @@ module.exports = [
     color: 'Yellow',
     tag: ['Cinema Vehicle Services','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=6731&imagenum=1',
+    email: '232fdh@gmail.com',
     notes: 'Indy type race car. Runs and drives. Limited use. 8/18' ,
     availability: true
   },
@@ -66,6 +72,7 @@ module.exports = [
     color: 'Yellow',
     tag: ['manual','movie','tan'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=5579&imagenum=1',
+    email: 'kkhh@gmail.com',
     notes: 'Yellow Exterior With Tan Cloth Interior' ,
     availability: false
   },
@@ -76,6 +83,7 @@ module.exports = [
     color: 'Purple',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=5724&imagenum=1',
+    email: 'f434fdf@gmail.com',
     notes: 'Beautiful New Paint. Exterior Purple',
     availability: true
   },
@@ -86,6 +94,7 @@ module.exports = [
     color: 'Red',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=6644&imagenum=1',
+    email: 'bnghk34@gmail.com',
     notes: 'Red Exterior With A White Top, Interior Is Red And Tan',
     availability: true
   },
@@ -96,6 +105,7 @@ module.exports = [
     color: 'Orange',
     tag: ['automatic','movie'],
     image: 'http://inventory.cinemavehicles.com/image.asp?id=6769&imagenum=1',
+    email: 'jhjkj44@gmail.com',
     notes: 'Runs And Drives. Has A Sunroof.',
     availability: true
   },
