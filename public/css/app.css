@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 header {
   background: url('http://www.psdgraphics.com/file/metal-diamond-plate.jpg');
   display: flex;
@@ -8,6 +10,7 @@ header {
 body {
   background-color: black;
   color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
@@ -17,7 +20,6 @@ h1 {
   /* width: 50%; */
   background-color: rgba(79, 79, 79,0.99);
   padding: 8px 10px;
-
 }
 
 h3 {
@@ -28,13 +30,11 @@ h3 {
 .info-buttons {
   /* display: flex;
   justify-content: center; */
-
 }
 
 .del-edit:hover {
   cursor: pointer;
 }
-
 
 .username, .password {
   color: black;
@@ -71,15 +71,15 @@ h3 {
 #close:hover {
   cursor: pointer;
 } */
-.container{
-
+/*********    Views  partials     ********/
+/* .container{
   display:flex;
   flex-direction: row;
   width: 800px;
   flex-wrap: wrap;
   margin:0 auto;
   justify-content: space-between;
-}
+} */
 
 .individualsCars {
   border: 1px solid grey;
@@ -87,9 +87,104 @@ h3 {
   width: 250px;
 }
 
-.editForm {
-  width:228px;
-  padding: 0 11px;
+.flex-container{
+  display: flex;
+  margin: auto;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+  /*********    Side Navigation partials     ********/
+  /* https://www.w3schools.com/howto/howto_js_sidenav.asp */
+.sidenav {
+    height: 75%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-top: 150px;
+}
+
+/* .sidenav a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+} */
+
+.sidenav a:hover {
+    color: #f1f1f1;
+
+}
+
+.nav-butt {
+  /* padding: 0 0 0 25px; */
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  /* margin: 0 auto; */
+  text-align: center;
+}
+
+#nav-butt {
+   margin: 5px 22px;
+   /* padding: 0; */
+}
+
+#nav-butt1 {
+  margin: 5px 22px;
+}
+
+.main_right {
+    margin-left: 300px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 15px;}
+}
+
+  /*********    Home partials     ********/
+.categories {
+    background-image: url('https://images.pexels.com/photos/627678/pexels-photo-627678.jpeg');
+    background-size: cover;
+    width:90%;
+    height: 600px;
+    margin: auto;
+    color: black;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-heading {
+    margin-bottom: 1.2rem;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: 5%;
+    padding-top: 5%;
+}
+
+.section-description {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 1.5em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.headerNav>.button{
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 button.button-primary {

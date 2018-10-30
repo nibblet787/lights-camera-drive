@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="MovieCars">
+  <head>
+    <meta charset="utf-8">
+    <title>Lights, Camera, Drive!</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="js/app.js" charset="utf-8"></script>
+    <!-- <script src="js/modal.js" charset="utf-8"></script> -->
+
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link href="https://fonts.googleapis.com/css?family=Metal+Mania" rel="stylesheet">
+    <link rel="stylesheet" href="./css/app.css">
+  </head>
+
+  <body ng-controller="MovieCarController as ctrl">
+
+
+    <div class="sidenav">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="main_right">
+      <header>
+        <h1>Lights, Camera... Drive!</h1>
+        <nav class='headerNav'>
+          <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
+          <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
+          <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
+        </nav>
+      </header>
+      <div class="section categories">
+    <div class="container">
+      <h3 class="section-heading">Responsive Images</h3>
+      <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
+      <div class="row">
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="http://getskeleton.com/examples/landing/images/placeholder.png">
+        </div>
+        <div class="one-half column category">
+          <img class="u-max-full-width" src="http://getskeleton.com/examples/landing/images/placeholder.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+        <div class="container">
+          <h3 style="text-align:center;">The largest supplier of car rentals for movies, television, and commercials </h3>
+          <a ng-click="ctrl.toggleAddCar()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'  >Add New Car</a>
+          <a ng-if='ctrl.showWhenLoggedIn'  ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+
+
+    <!-- ************* Login Form ******************* -->
+
+          <form class="username" ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
+            <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+              <div class="row">
+                <div class="">
+                  <label>Username</label>
+                  <input class="u-full-width username" type="text" ng-model="ctrl.username" placeholder="username" required/>
+                </div>
+                <div class="">
+                  <label>Password</label>
+                  <input class="u-full-width password" type="password" ng-model="ctrl.password" placeholder="password" required/>
+                </div>
+                <input class="button-primary" ng-click="ctrl.toggleLogin()" type="submit" value="Login">
+              </div>
+            </div>
+          </form>
+
+    <!-- ************* Create User ******************* -->
+
+          <form ng-submit="ctrl.createUser()" ng-show="ctrl.showCreate">
+            <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+              <div class="row">
+                <div class="">
+                  <label>Username</label>
+                  <input class="u-full-width username" type="text" ng-model="ctrl.username" placeholder="username" required/>
+                </div>
+                <div class="">
+                  <label>Password</label>
+                  <input class="u-full-width password" type="password" ng-model="ctrl.password" placeholder="password" required/>
+                </div>
+                <input class="button-primary" ng-click="ctrl.toggleCreate()" type="submit" value="Create User">
+              </div>
+            </div>
+          </form>
+
+    <!-- ************* Form to add a new car ******************* -->
+
+          <form ng-submit="ctrl.createCar()" ng-show="ctrl.showAddCar">
+            <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+              <div class="row">
+                <div class="six columns">
+                  <label>Enter Make</label>
+                  <input class="u-full-width" type="text" ng-model="ctrl.make" placeholder="Make" required/>
+                </div>
+                <div class="six columns">
+                  <label>Enter Model</label>
+                  <input class="u-full-width" type="text" ng-model="ctrl.model" placeholder="Model" required/>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="six columns">
+                  <label>Enter Year</label>
+                  <input class="u-full-width" type="year" ng-model="ctrl.year" placeholder="YYYY"/>
+                </div>
+                <div class="six columns">
+                  <label>Enter Color</label>
+                  <input class="u-full-width" type="text" ng-model="ctrl.color" placeholder="Color"/>
+                </div>
+              </div>
+
+              <label for="exampleMessage">Add Image</label>
+              <input class="u-full-width"type="text" ng-model="ctrl.image" placeholder="Add Image Path"/>
+
+              <div class="row">
+                <div class="six columns">
+                  <label class="example-send-yourself-copy">
+                    <input type="checkbox" ng-model="ctrl.availability"/>
+                    <span class="label-body"> Available</span>
+                  </label>
+                </div>
+                <div class="six columns">
+                  <label class="container">Tags:
+                    <input type="text" ng-model="ctrl.tags" value=""/>
+                  </label>
+                </div>
+              </div>
+
+              <label for="exampleMessage">Notes</label>
+              <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
+              <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
+            </div>
+          </form>
+
+    <!-- ************* Form to edit a car ******************* -->
+
+
+
+    <!-- ************* Show all cars ******************* -->
+      <div class="flex-container">
+        <div class="card1" ng-repeat="car in ctrl.cars">
+          <div class="card-body">
+            <h2 class="card-title">  {{ car.make }} {{ car.model }}</h2>
+            <p class="card-text">ID: <%=pokemon[i].id%></p>
+          </div>
+          <img class="card-img-top" src="{{ car.image }}" alt="{{ car.make }} {{ car.model }}"/>
+          <div class="row">
+            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
