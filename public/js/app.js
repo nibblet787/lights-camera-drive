@@ -62,6 +62,7 @@ app.controller('MovieCarController', ['$http', function($http){
         controller.availability= false;
         controller.cars.unshift(response.data)
         controller.getCars();
+        controller.includePath = './partials/view.html';
     }, function(){
         console.log('error');
     });
@@ -72,7 +73,7 @@ app.controller('MovieCarController', ['$http', function($http){
       method:'POST',
       url: '/cars/seed',
     }).then(function(response){
-        this.getCars();
+        controller.includePath = './partials/home.html';
     }, function(){
         console.log('error');
     });

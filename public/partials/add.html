@@ -1,6 +1,6 @@
 <!-- ************* Form to add a new car ******************* -->
 <h3 style="text-align:center;">Add New Car/Listing</h3>
-      <form ng-submit="ctrl.createCar()">
+      <form ng-submit="ctrl.createCar()" style="color:black;">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
           <div class="row">
             <div class="six columns">
@@ -43,6 +43,6 @@
 
           <label for="exampleMessage">Notes</label>
           <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
-          <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
+          <input class="button-primary" type="submit" value="List New Car">
         </div>
       </form>
