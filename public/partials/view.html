@@ -1,15 +1,72 @@
 <div class="container allCarsView">
   <div class='individualsCars'  ng-repeat="car in ctrl.cars">
+    <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
+    <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
+    <label class="car-mini-label">Model Year: {{ car.year }}</label>
+    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
+    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
+    <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+    <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
+    <a href="#" ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.indexOfEditFormToShow = $index">
+      <img class="del-edit" src="/assets/edit-16.png" style="width:20px;" />
+    </a>
 
-      <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
-      <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
-      <label class="car-mini-label">Model Year: {{ car.year }}</label>
-      <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-      <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
-        <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
-          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
-        <!-- <div class="info-buttons"> -->
-          <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
-          <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+    <!-- ************* Form to edit a car ******************* -->
+    <label>
+    <form ng-submit="ctrl.editCar(car)" ng-show="$index === ctrl.indexOfEditFormToShow" >
+      <div class="container" style="display:block; background-color:; width: 100%;">
+        <div class="row">
+          <div class="six columns">
+            <label>Enter Make</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.editedMake" value="{{car.make}}" required/>
+          </div>
+          <div class="six columns">
+            <label>Enter Model</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.editedModel" value="model" required/>
+          </div>
         </div>
-    </div>
+        <div class="row">
+          <div class="six columns">
+              <label>Enter Year</label>
+                <input class="u-full-width" type="year" ng-model="ctrl.editedYear" placeholder="YYYY"/>
+          </div>
+          <div class="six columns">
+            <label>Enter Color</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.editedColor" placeholder="Color"/>
+          </div>
+        </div>
+        <label for="exampleMessage">Add Image</label>
+        <input class="u-full-width"type="text" ng-model="ctrl.editedImage" placeholder="Add Image Path"/>
+        <div class="row">
+        <div class="six columns">
+          <label class="example-send-yourself-copy">
+            <input type="checkbox" ng-model="ctrl.editedAvailability"/>
+                <span class="label-body"> Available</span>
+          </label>
+        </div>
+
+        </div>
+        <label for="exampleMessage">Notes</label>
+        <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
+        <input class="button-primary" type="submit" value="Apply Changes" ng-click="ctrl.indexOfEditFormToShow = 20000">
+      </div>
+    </form>
+    <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+  </div>
+</div>
+</label>
+
+<style>
+  .container
+  {
+    display:flex;
+    flex-direction: row;
+    width: 800px;
+    flex-wrap: wrap;
+    margin:0 auto;
+    justify-content: space-between;
+  }
+  input{
+    color:red;
+  }
+</style>

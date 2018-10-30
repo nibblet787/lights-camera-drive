@@ -99,22 +99,21 @@ app.controller('MovieCarController', ['$http', function($http){
         model: this.editedModel,
         year: this.editedYear,
         color: this.editedColor,
-        tags: this.editedTags,
+      //  tags: this.editedTags,
         image: this.editedImage,
         notes: this.editedNotes,
         availability: this.editedAvailability
       }
     }).then(function(response){
-      response.data = {};
-      // controller.make= "";
-      // controller.model= "";
-      // controller.year= "";
-      // controller.color= "";
-      // controller.tags= "";
-      // controller.image= "";
-      // controller.note= "";
-      // controller.availability= false;
       controller.getCars();
+      controller.make= "";
+      controller.model= "";
+      controller.year= "";
+      controller.color= "";
+    //  controller.tags= " ";
+      controller.image= "";
+      controller.note= "";
+      controller.availability= false;
     }, error => {
       console.log(error);
     })
@@ -155,7 +154,7 @@ this.createUser = function(){
             }
         }).then(function(response){
             console.log(response);
-            controller.includePath = './partials/home.html';
+            controller.includePath = './partials/view.html';
             controller.toggleWhenUserIsLoggedIn();
         })
     }
