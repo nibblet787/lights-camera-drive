@@ -21,7 +21,7 @@ h1 {
 }
 
 h3 {
-  margin-top:20px;
+  margin: 5px 0;
   border-bottom:1px solid grey;
 }
 
@@ -90,4 +90,8 @@ h3 {
 .editForm {
   width:228px;
   padding: 0 11px;
+}
+
+button.button-primary {
+  background-color: rgb(152, 11, 11);
 }
