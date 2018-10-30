@@ -3,7 +3,7 @@ const app = angular.module('MovieCars', []);
 app.controller('MovieCarController', ['$http', function($http){
 
   //----------Partials
-  this.includePath = './partials/home.html';
+  this.includePath = './partials/view.html';
   this.changeInclude = (path) => {
   this.includePath = './partials/'+ path +'.html';
   }
