@@ -10,15 +10,15 @@
 * Splash page/ Landing page with a banner.
 * Cars Listing page:
   * Displays all car listings.
-  * Each package has a make, model, year, color, image, email, notes and availabity.
-  * By default a customer can only view car image, model, and model year.
+  * Each package has a make, model, year, color, image, email, notes and availability.
+  * By default, a customer can only view a car's image, make, model, and model year.
   
 
 ##  Technical details:
 * Main mongo db : lights-camera-drive
 * Two separate collections:
-  * cars for storing all the listings
-  * users for storing the user login information
+  * "cars" for storing all the listings
+  * "users" for storing the user login information
 * CSS framework - Skeleton
 * Technology - Angular JS, Node, Mongoose, Express, Html and CSS
 
