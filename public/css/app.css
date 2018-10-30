@@ -71,48 +71,28 @@ h3 {
 #close:hover {
   cursor: pointer;
 } */
+/*********    Views  partials     ********/
+.container{
+  display:flex;
+  flex-direction: row;
+  width: 800px;
+  flex-wrap: wrap;
+  margin:0 auto;
+  justify-content: space-between;
+}
+
+.individualsCars {
+  border: 1px solid grey;
+  margin: 10px 5px;
+  width: 250px;
+}
+
 .flex-container{
   display: flex;
   margin: auto;
   align-items: stretch;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-.card1{
-  color: white;
-  border: green solid 1px;
-  /* padding: .5em; */
-  margin: .5em .5em;
-  flex-basis: 10em;
-  text-align: center;
-
-}
-
-.selected {
-  color: #40A69A;
-  flex-grow: 2;
-  order: -1;
-}
-.card-body
-{
-  border-radius: 10%;
-}
-.row{
-  flex-wrap: nowrap;;
-  margin-right: 0px;
-  margin-left: 0px;
-}
-.container > h1{
-  font-size: 4em;
-  border: green solid 12px;
-  margin-bottom: 1px;
-}
-.one-half.column:first-child {
-    border-right: 1px dotted white;
-}
-.card-img-top {
-    height: 200px;
 }
 
   /*********    Side Navigation partials     ********/
