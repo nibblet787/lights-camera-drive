@@ -1,6 +1,13 @@
 const app = angular.module('MovieCars', []);
 
 app.controller('MovieCarController', ['$http', function($http){
+
+  //----------Partials
+  this.includePath = './partials/home.html';
+  this.changeInclude = (path) => {
+  this.includePath = './partials/'+ path +'.html';
+  }
+  //----------
   this.make= "";
   this.model= "";
   this.year= "";
@@ -58,6 +65,7 @@ app.controller('MovieCarController', ['$http', function($http){
         controller.availability= false;
         controller.cars.unshift(response.data)
         controller.getCars();
+        controller.includePath = './partials/view.html';
     }, function(){
         console.log('error');
     });
@@ -68,27 +76,11 @@ app.controller('MovieCarController', ['$http', function($http){
       method:'POST',
       url: '/cars/seed',
     }).then(function(response){
-        this.getCars();
+        controller.includePath = './partials/home.html';
     }, function(){
         console.log('error');
     });
   }
-  // <!--create User -->
-  this.createUser = function(){
-    $http({
-        method:'POST',
-        url:'/users',
-        data: {
-            username: this.username,
-            password: this.password
-        }
-    }).then(function(response){
-        console.log(response);
-    })
-}
-
-
-
 
   /*********    Delete route      ********/
   this.deleteCar = function(car){
@@ -110,7 +102,7 @@ app.controller('MovieCarController', ['$http', function($http){
         model: this.editedModel,
         year: this.editedYear,
         color: this.editedColor,
-        tags: this.editedTags,
+      //  tags: this.editedTags,
         image: this.editedImage,
         notes: this.editedNotes,
         email: this.editedEmail,
@@ -118,16 +110,15 @@ app.controller('MovieCarController', ['$http', function($http){
       }
     }).then(function(response){
 
-      response.data = {};
-      // controller.make= "";
-      // controller.model= "";
-      // controller.year= "";
-      // controller.color= "";
-      // controller.tags= "";
-      // controller.image= "";
-      // controller.note= "";
-      // controller.availability= false;
       controller.getCars();
+      controller.make= "";
+      controller.model= "";
+      controller.year= "";
+      controller.color= "";
+    //  controller.tags= " ";
+      controller.image= "";
+      controller.note= "";
+      controller.availability= false;
     }, error => {
       console.log(error);
     })
@@ -137,6 +128,22 @@ app.controller('MovieCarController', ['$http', function($http){
 
 
 
+/********* Create User  ********/
+this.createUser = function(){
+  $http({
+      method:'POST',
+      url:'/users',
+      data: {
+          username: this.username,
+          password: this.password
+      }
+  }).then(function(response){
+      console.log(response);
+      controller.includePath = './partials/home.html';
+      controller.username= "";
+      controller.password= "";
+  })
+}
 
 
 /*********     Login function      ********/
@@ -150,6 +157,7 @@ app.controller('MovieCarController', ['$http', function($http){
             }
         }).then(function(response){
             console.log(response);
+            controller.includePath = './partials/view.html';
             controller.toggleWhenUserIsLoggedIn();
         })
     }

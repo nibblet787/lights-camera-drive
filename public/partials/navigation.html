@@ -1,0 +1,20 @@
+<div class="sidenav">
+  <a href="#" ng-click="ctrl.changeInclude('home')">Home</a>
+  <a href="#" ng-click="ctrl.changeInclude('view')">View Cars</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+
+  <h3 ng-if='ctrl.showWhenLoggedIn'>
+      Welcome, {{ctrl.username}}
+  </h3>
+
+  <nav class='headerNav'>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.logout()" class="button">Logout</a>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.changeInclude('add')"class="button" href="#">Add New Car</a>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.createCarSeed()" class="button" href="#" >Seed Cars</a>
+
+    <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.changeInclude('login')" class="button" href="#" >Login</a>
+    <a ng-if='!ctrl.showWhenLoggedIn' ng-click="ctrl.changeInclude('create')" class="button" href="#">Sign Up</a>
+  </nav>
+
+</div>
