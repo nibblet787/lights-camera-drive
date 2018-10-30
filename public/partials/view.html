@@ -4,7 +4,7 @@
     <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
     <label class="car-mini-label">Model Year: {{ car.year }}</label>
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
+    
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Contact Email: {{ car.email }}</label>
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
