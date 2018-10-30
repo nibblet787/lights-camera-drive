@@ -1,5 +1,5 @@
 # Project 3 - Light Camera Drive
-## An app that helps film producers find cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angular, and Node.js
+## An app that helps film producers find cars for movie projects. The website is built using the MEAN stack: Mongoose, Express, Angular, and Node.js
 
 ### Live Site: https://lights-camera-drive.herokuapp.com/
 
