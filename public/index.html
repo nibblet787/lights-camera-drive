@@ -68,7 +68,7 @@
 
       <form ng-submit="ctrl.createCar()" ng-show="ctrl.showAddCar">
         <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
-          <div class="row">
+          <!-- <div class="row"> -->
             <div class="six columns">
               <label>Enter Make</label>
               <input class="u-full-width" type="text" ng-model="ctrl.make" placeholder="Make" required/>
@@ -77,7 +77,7 @@
               <label>Enter Model</label>
               <input class="u-full-width" type="text" ng-model="ctrl.model" placeholder="Model" required/><br>
             </div>
-          </div>
+          <!-- </div> -->
           <div class="row">
             <div class="six columns">
               <label>Enter Year</label>
@@ -88,6 +88,8 @@
               <input class="u-full-width" type="text" ng-model="ctrl.color" placeholder="Color"/>
             </div>
           </div>
+          <label for="exampleMessage">Contact Email</label>
+          <input class="u-full-width" type="text" ng-model="ctrl.email" placeholder="Email"/>
           <label for="exampleMessage">Add Image</label>
           <input class="u-full-width"type="text" ng-model="ctrl.image" placeholder="Add Image Path"/>
             <!-- <div class="six columns">
@@ -167,15 +169,15 @@
         <img ng-click="ctrl.toggleInfo($index)" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
         <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
         <label class="car-mini-label">Model Year: {{ car.year }}</label>
-        <div ng-if="$index === ctrl.indexOfEditFormShow">
+      <div ng-if="$index === ctrl.indexOfEditFormShow">
         <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-        <!-- <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label> -->
-          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
-            <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
+        <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Contact Email: {{ car.email }}</label>
+        <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+        <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
           <!-- <div class="info-buttons"> -->
-            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
-            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit($index)"/>
-          </div>
+        <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+        <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit($index)"/>
+      </div>
 
 <!-- ************* Form to edit a car ******************* -->
 
@@ -202,25 +204,26 @@
               </div>
               <label for="exampleMessage">Add Image</label>
               <input class="u-full-width"type="text" ng-model="ctrl.editedImage" placeholder="Add Image Path"/>
+              <!-- <div class="row">
+                <div class="six columns"> -->
+                  <label >Contact Email</br>
+                    <input class="u-full-width" type="text" ng-model="ctrl.editedEmail" value=""/>
+                  </label>
+                <!-- </div>
+              </div> -->
+              <!-- <div class="row">
+                <div class="six columns"> -->
+                  <label>Notes
+                    <input class="u-full-width" type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
+                  </label>
+                <!-- </div>
+              </div> -->
               <div class="row">
                 <div class="six columns">
                   <label class="example-send-yourself-copy">
                     <input type="checkbox" ng-model="ctrl.editedAvailability"/>
                         <span class="label-body"> Available</span>
                   </label>
-                </div>
-              </div>
-              <!-- <div class="row">
-                <div class="six columns">
-                  <label class="container">Tags:</br>
-                    <input type="text" ng-model="ctrl.editedTags" value=""/>
-                  </label>
-                </div>
-              </div> -->
-              <div class="row">
-                <div class="six columns">
-                  <label for="exampleMessage">Notes</label>
-                    <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
                 </div>
               </div>
               <input class="button-primary  " type="submit" ng-click="ctrl.toggleEdit()" value="Apply Changes">
