@@ -23,7 +23,7 @@ h1 {
 }
 
 h3 {
-  margin-top:20px;
+  margin: 5px 0;
   border-bottom:1px solid grey;
 }
 
@@ -164,4 +164,8 @@ h3 {
   margin-left: auto;
   margin-right: auto;
 
+}
+
+button.button-primary {
+  background-color: rgb(152, 11, 11);
 }

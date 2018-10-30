@@ -17,9 +17,10 @@ app.controller('MovieCarController', ['$http', function($http){
   this.note= "";
   this.username = '';
   this.password ='';
+  this.email='';
   this.availability= false;
   const controller = this;
-  this.indexOfEditFormShow = 1;
+  this.indexOfEditFormShow = 0;
 
 
   /*********    Show route      ********/
@@ -49,6 +50,7 @@ app.controller('MovieCarController', ['$http', function($http){
         tags: this.tags,
         image: this.image,
         note: this.note,
+        email: this.email,
         availability: this.availability,
       }
     }).then(function(response){
@@ -59,6 +61,7 @@ app.controller('MovieCarController', ['$http', function($http){
         controller.tags= "";
         controller.image= "";
         controller.note= "";
+        controller.email= "";
         controller.availability= false;
         controller.cars.unshift(response.data)
         controller.getCars();
@@ -102,9 +105,11 @@ app.controller('MovieCarController', ['$http', function($http){
       //  tags: this.editedTags,
         image: this.editedImage,
         notes: this.editedNotes,
+        email: this.editedEmail,
         availability: this.editedAvailability
       }
     }).then(function(response){
+
       controller.getCars();
       controller.make= "";
       controller.model= "";
@@ -119,11 +124,9 @@ app.controller('MovieCarController', ['$http', function($http){
     })
   };
 
-  this.showWhenLoggedIn = false;
 
-this.toggleWhenUserIsLoggedIn = function(){
-  this.showWhenLoggedIn = !this.showWhenLoggedIn;
-}
+
+
 
 /********* Create User  ********/
 this.createUser = function(){
@@ -174,12 +177,15 @@ this.createUser = function(){
     this.showLogin = false;
     this.showCreate = false;
     this.showInfo = false;
+    this.showWhenLoggedIn = false;
     // this.car = {};
 
     this.toggleAddCar = function(){
         this.showAddCar =  !this.showAddCar;
     };
-    this.toggleEdit = function(){
+    this.toggleEdit = function($index){
+      this.indexOfEditFormShow = $index;
+      console.log(this.indexOfEditFormShow);
         this.showEdit = !this.showEdit;
     };
     this.toggleLogin = function(){
@@ -188,15 +194,17 @@ this.createUser = function(){
     this.toggleCreate = function(){
         this.showCreate = !this.showCreate;
     };
+    this.toggleInfo = function($index){
+        if(this.showWhenLoggedIn === true){
+          this.indexOfEditFormShow = $index;
+          this.showInfo = !this.showInfo
+        }
+    };
+    this.toggleWhenUserIsLoggedIn = function(){
+        this.showWhenLoggedIn = !this.showWhenLoggedIn;
+    };
 
-    this.toggleInfo = function(){
-      if(this.showWhenLoggedIn === true){
-      this.showInfo = !this.showInfo
-    }
-    }
-
-
-
+// "ctrl.toggleEdit()"
 
   this.getCars();
 }]);
