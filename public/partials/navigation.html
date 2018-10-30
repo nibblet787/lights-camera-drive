@@ -9,9 +9,9 @@
   </h3>
 
   <nav class='headerNav'>
-    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.logout()" class="button button-primary" id="nav-butt">Logout</a>
-    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.changeInclude('add')"class="button button-primary" href="#" >Add New Car</a>
-    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.logout()" class="button button-primary" id="nav-butt2">Logout</a>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.changeInclude('add')"class="button button-primary" href="#" id="nav-butt3">Add New Car</a>
+    <a ng-if='ctrl.showWhenLoggedIn' ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" id="nav-butt4">Seed Cars</a>
 
     <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.changeInclude('login')" class="button button-primary" href="#" id="nav-butt">Login</a>
     <a ng-if='!ctrl.showWhenLoggedIn' ng-click="ctrl.changeInclude('create')" class="button button-primary" href="#" id="nav-butt1">Sign Up</a>
