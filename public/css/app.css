@@ -25,6 +25,8 @@ h1 {
 h3 {
   margin: 5px 0;
   border-bottom:1px solid grey;
+  font-size: 20px;
+  text-align: center;
 }
 
 .info-buttons {
@@ -134,11 +136,23 @@ h3 {
 }
 
 #nav-butt {
-   margin: 5px 22px;
+  margin: 5px 22px;
    /* padding: 0; */
 }
 
 #nav-butt1 {
+  margin: 5px 22px;
+}
+
+#nav-butt2 {
+  margin: 5px 22px;
+}
+
+#nav-butt3 {
+  margin: 5px 22px;
+}
+
+#nav-butt4 {
   margin: 5px 22px;
 }
 
