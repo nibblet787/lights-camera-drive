@@ -7,6 +7,7 @@ const carSchema = new mongoose.Schema({
   tags:{type: String},
   image:{type: String, default: 'https://driveshare.com/files/cars_images/800/1513303300_phpTs9IkF.jpg'},
   notes:{type: String},
+  contact: {type: String, required: true},
   availability:{type: Boolean, default: false}
 });
 

@@ -1,7 +1,7 @@
 module.exports = [
   {
-    make: 'Camaro',
-    model: 'Chevrolet',
+    make: 'Chevrolet',
+    model: 'Camaro',
     year: 1968,
     color: 'Blue and White',
     tag: ["hide-away headlights", "shaved door handles"],
@@ -10,8 +10,8 @@ module.exports = [
     availability: false
   },
   {
-    make: 'Challenger',
-    model: 'Dodge',
+    make: 'Dodge',
+    model: 'Challenger',
     year: 1970,
     color: 'Orange and Black',
     tag: ["T/A", "hood scoop"],
@@ -20,8 +20,8 @@ module.exports = [
     availability: true
   },
   {
-    make: 'Charger',
-    model: 'Dodge',
+    make: 'Dodge',
+    model: 'Charger',
     year: 1969,
     color: 'Black',
     tag: ["chrome", "hide-away headlights"],
@@ -30,8 +30,8 @@ module.exports = [
     availability: true
   },
   {
-    make: 'GTO',
-    model: 'Pontiac',
+    make: 'Pontiac',
+    model: 'GTO',
     year: 1969,
     color: 'Orange',
     tag: ["pinstripes", "hood scoop"],
@@ -40,8 +40,8 @@ module.exports = [
     availability: false
   },
   {
-    make: 'Grand National',
-    model: 'Buick',
+    make: 'Buick',
+    model: 'Grand National',
     year: 1986,
     color: 'Black',
     tag: ["ripped seats"],

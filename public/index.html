@@ -15,21 +15,19 @@
   </head>
   <header>
       <h1>Lights, Camera... Drive!</h1>
-
-  <nav class='headerNav'>
-    <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
-    <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
-    <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
-  </nav>
-
-    </header>
-
-    <body ng-controller="MovieCarController as ctrl">
+      <nav class='headerNav'>
+        <a ng-click="ctrl.logout()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'>Logout</a>
+        <a ng-if='!ctrl.showWhenLoggedIn'  ng-click="ctrl.toggleLogin()" class="button button-primary" href="#" >Login</a>
+        <a ng-click="ctrl.toggleCreate()" class="button button-primary" href="#" >Create User</a>
+      </nav>
+  </header>
+  <body ng-controller="MovieCarController as ctrl">
       <div class="container">
         <h3 style="text-align:center">The largest supplier of car rentals for movies, television, and commercials </h3>
         <a ng-click="ctrl.toggleAddCar()" class="button button-primary" ng-if='ctrl.showWhenLoggedIn'  >Add New Car</a>
         <a ng-if='ctrl.showWhenLoggedIn'  ng-click="ctrl.createCarSeed()" class="button button-primary" href="#" >Seed Cars</a>
       </div>
+
 <!-- ************* Login Form ******************* -->
 
       <form class="username" ng-submit="ctrl.logIn()" ng-show="ctrl.showLogin">
@@ -77,10 +75,9 @@
             </div>
             <div class="six columns">
               <label>Enter Model</label>
-              <input class="u-full-width" type="text" ng-model="ctrl.model" placeholder="Model" required/>
+              <input class="u-full-width" type="text" ng-model="ctrl.model" placeholder="Model" required/><br>
             </div>
           </div>
-
           <div class="row">
             <div class="six columns">
               <label>Enter Year</label>
@@ -91,10 +88,15 @@
               <input class="u-full-width" type="text" ng-model="ctrl.color" placeholder="Color"/>
             </div>
           </div>
-
           <label for="exampleMessage">Add Image</label>
           <input class="u-full-width"type="text" ng-model="ctrl.image" placeholder="Add Image Path"/>
-
+            <!-- <div class="six columns">
+              <label class="container">Tags:
+                <input type="text" ng-model="ctrl.tags" value=""/>
+              </label>
+            </div> -->
+          <label for="exampleMessage">Notes</label>
+          <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
           <div class="row">
             <div class="six columns">
               <label class="example-send-yourself-copy">
@@ -102,16 +104,8 @@
                 <span class="label-body"> Available</span>
               </label>
             </div>
-            <div class="six columns">
-              <label class="container">Tags:
-                <input type="text" ng-model="ctrl.tags" value=""/>
-              </label>
-            </div>
+            <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
           </div>
-
-          <label for="exampleMessage">Notes</label>
-          <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
-          <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
         </div>
       </form>
 
@@ -166,25 +160,26 @@
       </form> -->
 
 <!-- ************* Show all cars ******************* -->
-  <div class="container allCarsView">
-    <div class='individualsCars'  ng-repeat="car in ctrl.cars">
 
-        <img ng-click="ctrl.toggleInfo()" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
+  <div class="container allCarsView" >
+    <div class='individualsCars'   ng-repeat="car in ctrl.cars">
+
+        <img ng-click="ctrl.toggleInfo($index)" class="car-thumb" src="{{ car.image }}"  style="width: 250px; " alt="pics of cars">
         <label class="car-mini-label">{{ car.make }} {{ car.model }}</label>
         <label class="car-mini-label">Model Year: {{ car.year }}</label>
+        <div ng-if="$index === ctrl.indexOfEditFormShow">
         <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-        <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label>
-          <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
+        <!-- <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label> -->
+          <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
             <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
           <!-- <div class="info-buttons"> -->
             <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
-            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
-          <!-- </div> -->
-
+            <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit($index)"/>
+          </div>
 
 <!-- ************* Form to edit a car ******************* -->
-            <form class='editForm' ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
 
+            <form ng-if="$index === ctrl.indexOfEditFormShow" class='editForm' ng-submit="ctrl.editCar(car)" ng-show="ctrl.showEdit">
               <div class="row">
                 <div class="six columns">
                   <label>Enter Make</label>
@@ -195,7 +190,6 @@
                     <input class="u-full-width" type="text" ng-model="ctrl.editedModel" value="model" placeholder="{{car.model}}" required/>
                 </div>
               </div>
-
               <div class="row">
                 <div class="six columns">
                     <label>Enter Year</label>
@@ -206,10 +200,8 @@
                     <input class="u-full-width" type="text" ng-model="ctrl.editedColor" placeholder="Color"/>
                 </div>
               </div>
-
               <label for="exampleMessage">Add Image</label>
               <input class="u-full-width"type="text" ng-model="ctrl.editedImage" placeholder="Add Image Path"/>
-
               <div class="row">
                 <div class="six columns">
                   <label class="example-send-yourself-copy">
@@ -231,21 +223,11 @@
                     <input class="u-full-width"type="text" ng-model="ctrl.editedNotes" placeholder="Optional"/>
                 </div>
               </div>
-
-
-
-
-              <input class="button-primary" type="submit" ng-click="ctrl.toggleEdit()" value="Apply Changes">
-
+              <input class="button-primary  " type="submit" ng-click="ctrl.toggleEdit()" value="Apply Changes">
           </form>
-
         </div>
           </div>
     </div>
   </div>
-
-
-
-
   </body>
 </html>
