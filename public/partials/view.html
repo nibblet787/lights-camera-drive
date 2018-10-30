@@ -1,0 +1,13 @@
+<div class="flex-container">
+  <div class="card1" ng-repeat="car in ctrl.cars">
+    <div class="card-body">
+      <h2 class="card-title">  {{ car.make }} {{ car.model }}</h2>
+      <p class="card-text">ID: <%=pokemon[i].id%></p>
+    </div>
+    <img class="card-img-top" src="{{ car.image }}" alt="{{ car.make }} {{ car.model }}"/>
+    <div class="row">
+      <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
+      <img ng-if='ctrl.showWhenLoggedIn' class="del-edit" src="/assets/edit-16.png" style="width:20px;" ng-click="ctrl.toggleEdit()"/>
+    </div>
+  </div>
+</div>

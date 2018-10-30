@@ -1,6 +1,13 @@
 const app = angular.module('MovieCars', []);
 
 app.controller('MovieCarController', ['$http', function($http){
+
+  //----------Partials
+  this.includePath = './partials/home.html';
+  this.changeInclude = (path) => {
+  this.includePath = './partials/'+ path +'.html';
+  }
+  //----------
   this.make= "";
   this.model= "";
   this.year= "";
@@ -70,22 +77,6 @@ app.controller('MovieCarController', ['$http', function($http){
         console.log('error');
     });
   }
-  // <!--create User -->
-  this.createUser = function(){
-    $http({
-        method:'POST',
-        url:'/users',
-        data: {
-            username: this.username,
-            password: this.password
-        }
-    }).then(function(response){
-        console.log(response);
-    })
-}
-
-
-
 
   /*********    Delete route      ********/
   this.deleteCar = function(car){
@@ -134,6 +125,22 @@ this.toggleWhenUserIsLoggedIn = function(){
   this.showWhenLoggedIn = !this.showWhenLoggedIn;
 }
 
+/********* Create User  ********/
+this.createUser = function(){
+  $http({
+      method:'POST',
+      url:'/users',
+      data: {
+          username: this.username,
+          password: this.password
+      }
+  }).then(function(response){
+      console.log(response);
+      controller.includePath = './partials/home.html';
+      controller.username= "";
+      controller.password= "";
+  })
+}
 
 
 /*********     Login function      ********/
@@ -147,6 +154,7 @@ this.toggleWhenUserIsLoggedIn = function(){
             }
         }).then(function(response){
             console.log(response);
+            controller.includePath = './partials/home.html';
             controller.toggleWhenUserIsLoggedIn();
         })
     }

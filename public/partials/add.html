@@ -1,0 +1,48 @@
+<!-- ************* Form to add a new car ******************* -->
+<h3 style="text-align:center;">Add New Car/Listing</h3>
+      <form ng-submit="ctrl.createCar()">
+        <div class="container" style="border: 1px solid grey; border-radius: 5px; padding:2%;">
+          <div class="row">
+            <div class="six columns">
+              <label>Enter Make</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.make" placeholder="Make" required/>
+            </div>
+            <div class="six columns">
+              <label>Enter Model</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.model" placeholder="Model" required/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="six columns">
+              <label>Enter Year</label>
+              <input class="u-full-width" type="year" ng-model="ctrl.year" placeholder="YYYY"/>
+            </div>
+            <div class="six columns">
+              <label>Enter Color</label>
+              <input class="u-full-width" type="text" ng-model="ctrl.color" placeholder="Color"/>
+            </div>
+          </div>
+
+          <label for="exampleMessage">Add Image</label>
+          <input class="u-full-width"type="text" ng-model="ctrl.image" placeholder="Add Image Path"/>
+
+          <div class="row">
+            <div class="six columns">
+              <label class="example-send-yourself-copy">
+                <input type="checkbox" ng-model="ctrl.availability"/>
+                <span class="label-body"> Available</span>
+              </label>
+            </div>
+            <div class="six columns">
+              <label class="container">Tags:
+                <input type="text" ng-model="ctrl.tags" value=""/>
+              </label>
+            </div>
+          </div>
+
+          <label for="exampleMessage">Notes</label>
+          <input class="u-full-width"type="text" ng-model="ctrl.notes" placeholder="Optional"/>
+          <input class="button-primary" ng-click="ctrl.toggleAddCar()" type="submit" value="List New Car">
+        </div>
+      </form>
