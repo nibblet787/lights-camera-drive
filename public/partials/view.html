@@ -5,7 +5,7 @@
     <label class="car-mini-label">Model Year: {{ car.year }}</label>
   <div ng-if="$index === ctrl.indexOfEditFormShow">
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Color: {{ car.color }}</label>
-    <!-- <label ng-if='ctrl.showWhenLoggedIn' class="car-mini-label">Car tags: {{ car.tags }}</label> -->
+    <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Contact Email: {{ car.email }}</label>
     <label style="width: 100%;" ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car notes: {{ car.notes }}</label>
     <label ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="car-mini-label">Car Availablity: {{car.availability ? 'Available' : 'Not Available'}}</label>
     <img ng-if='ctrl.showInfo && ctrl.showWhenLoggedIn' class="del-edit" src="/assets/delete.png" style="width:20px;" ng-click="ctrl.deleteCar(car)"/>
