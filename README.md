@@ -2,36 +2,36 @@
 ## Team Members
 * Rick / Michael / Anitha
 
-## SYNOPSIS: An app that helps film producers find specific types of cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angular, and Node.js.
+## SYNOPSIS: An app that helps film producers find specific types of cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angularjs, and Node.js.
 
 ### Live Site: https://lights-camera-drive.herokuapp.com/
 ### Git repo link: https://github.com/nibblet787/lights-camera-drive
 
 
 ## Site structure
+* Splash page/ Landing page with a banner.
 * Cars Listing page:
   * Displays all car listings.
   * Each entry has a make, model, year, color, image, contact email, notes and availability.
-    * Though, a non-account holder is restricted to a view a car's image, make, model and model year.
-* Splash page/ Landing page with a banner.
+    * Though, a non-account holder's view is restricted to a car's image, make, model and model year.
 
-##  Technical details:
-* Main acMongo dB : lights-camera-drive
+## Technical details:
+* Main Mongo dB : lights-camera-drive
 * Two separate collections:
-  * cars for storing all the listing
-  * users for storing the user login information
+  * "cars" for storing all the listings
+  * "users" for storing the user login information
 * CSS framework - Skeleton
-* Technology - Angular JS, Node, Mongoose, Express, Html and CSS
+* Technology - Angularjs, Node, Mongoose, Express, Html and CSS
 
-## CURD path:
-* An index page that displays the navigation partial and body div where each partials loads.
-* View Partial - display all cars listing
+## CRUD features:
+* An index page that displays the navigation partial and body div where each partial loads.
+* View Partial - displays all car listings
 * Create Partial - user creation/signup form 
-* Login Partial - user can login to their account using login form
-* Add Partial - logged in user can add new listing.
-* Edit Button - logged in user can edit an existing listing.
-* Delete Button - logged in user can delete a listing.
-* Seed Button - used to seed listing from seed model file.
+* Login Partial - user can login to their account
+* Add Partial - logged-in user can add a new car listing
+* Edit Button - logged-in user can edit an existing listing.
+* Delete Button - logged-in user can delete a listing
+* ***DEVELOPMENT TOOL:*** Seed Button - used to seed the listing from a seed model file
 
 
 ## Authorization
