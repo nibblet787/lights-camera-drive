@@ -2,7 +2,7 @@
 ## Team Members
 * Rick / Michael / Anitha
 
-## SYNOPSIS: An app that helps film producers find specific types of cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angularjs, and Node.js.
+## **SYNOPSIS:** An app that helps film producers find specific types of cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angularjs, and Node.js.
 
 ### Live Site: https://lights-camera-drive.herokuapp.com/
 ### Git repo link: https://github.com/nibblet787/lights-camera-drive
