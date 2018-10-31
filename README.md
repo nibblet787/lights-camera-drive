@@ -38,22 +38,20 @@
 * Included sign up/log in functionality for user, with encrypted passwords using bcrypt & an authorization flow
 
 ## Project Management 
-* We used git issues and waffle.io
+* Tracked via git issues and waffle.io
 
 
 ## Technical challenges:
 * Merging each team members work to the dev branch in git without causing major conflicts.
-* Heroku push not possible by all members caused dependencies.
 * Heroku kept crashing as soon as a wrong login credential was entered.
 * Seed button would add listings but would not automatically refresh view page.
 
 ## Future enhancements
-* Adding searching, sorting and filter listing functionality.
+* Add search, sort, and filter functionality.
 * Functionality to see availability of a car during weekends/weekdays.
-* Add review/likes for seller.
-* Clicking a car listing would expand all the car in the row. This needs to be fixed.
-* Add second login for end user not seller. End user can only see contact information of a car listing but cannot add/delete or edit.
-* Once a user selects a listing, they must be able to send an email to the seller.
+* Add review/likes for a particular car owner.
+* Add second login for film producers. This user can only see contact information of a car listing but cannot add/delete or edit.
+* Once a user selects a listing, they are able to send an email directly to the car owner from the website.
 
 
 ## Key Learning:
