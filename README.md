@@ -1,16 +1,18 @@
 # Project 3 - Light Camera Drive
-## An app that helps producer find cars for movie shooting. The website is built using the MEAN stack: Node.js, Mongoose, Express and Angular.
+## Team Members
+* Rick / Michael / Anitha
+
+## SYNOPSIS: An app that helps film producers find specific types of cars for movie shooting. The website is built using the MEAN stack: Mongoose, Express, Angular, and Node.js.
 
 ### Live Site: https://lights-camera-drive.herokuapp.com/
 ### Git repo link: https://github.com/nibblet787/lights-camera-drive
-## Team Member
-* Rick / Michael / Anitha
+
 
 ## Site structure
 * Cars Listing page:
-  * That displays all the cars listing.
-  * Each package has a make, model, year, color, image, email, notes and availability.
-  * By default, a customer can only view car make, model and image.
+  * Displays all car listings.
+  * Each entry has a make, model, year, color, image, contact email, notes and availability.
+    * Though, a non-account holder is restricted to a view a car's image, make, model and model year.
 * Splash page/ Landing page with a banner.
 
 ##  Technical details:
